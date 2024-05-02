@@ -1,0 +1,2 @@
+# Ignore local block data
+/src/networks/ethash/nodes/**/data
