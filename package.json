@@ -15,6 +15,7 @@
   "dependencies": {
     "@truffle/hdwallet-provider": "^2.1.15",
     "solc": "^0.8.25",
+    "truffle": "^5.11.5",
     "web3": "^4.8.0"
   },
   "devDependencies": {
