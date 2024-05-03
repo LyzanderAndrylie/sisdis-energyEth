@@ -70,7 +70,12 @@ untuk mendeploy, kita memerlukan hal berikut.
 
 > **Note**: Setelah kalian mengunduh npm, jalankan perintah `npm i` untuk mengunduh packages yang dibutuhkan.
 
+1. Compile
 `CompilerByRemote.js` memiliki bug terkait dengan `Invalid member of stdlib` (ref: <https://github.com/ethereum/solc-js/issues/537>). Dengan demikian, pakai `compileByBinary.js` sesuai dengan arahan pada github issues yang telah disebutkan.
+
+2. Buat file `.bin` dan `.abi` dari hasil kompilasi `.json`
+
+3. Deploy contract
 
 ## Note
 

@@ -13,6 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@ethereumjs/tx": "^5.3.0",
+    "fs-extra": "^11.2.0",
     "solc": "^0.8.25",
     "web3": "^4.8.0"
   },
