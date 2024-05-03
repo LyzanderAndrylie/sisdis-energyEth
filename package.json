@@ -1,0 +1,22 @@
+{
+  "name": "sisdis-tk",
+  "version": "1.0.0",
+  "description": "Repository TK Sistem Terdistribusi dengan topik Economic Feasibility of Consensus dari kode tesis [energyEth](https://github.com/fredrbl/energyEth)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "solc": "^0.8.25",
+    "web3": "^4.8.0"
+  },
+  "devDependencies": {
+    "prettier": "3.2.5"
+  }
+}

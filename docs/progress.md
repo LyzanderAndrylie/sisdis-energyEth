@@ -10,6 +10,7 @@ Dokumen ini berisi progress yang telah dilakukan sepanjang TK. Tujuan dokumen in
   - [Mengunduh Hyperledger Besu](#mengunduh-hyperledger-besu)
   - [Menjalankan sebuah node untuk testing](#menjalankan-sebuah-node-untuk-testing)
   - [Membuat jaringan privat dengan ethash (PoW)](#membuat-jaringan-privat-dengan-ethash-pow)
+  - [Mendeploy smart contract ke ethash](#mendeploy-smart-contract-ke-ethash)
   - [Note](#note)
 
 ## Mempersiapkan Kebutuhan Sistem
@@ -59,6 +60,17 @@ Setiap perintah dijalankan pada node yang berbeda dengan working directory berup
   ```
 
   > *Note*: Node-1 Enode URL dapat dilihat ketika menjalankan perintah `Jalankan bootnode`.
+
+## Mendeploy smart contract ke ethash
+
+untuk mendeploy, kita memerlukan hal berikut.
+
+1. Node package manager (npm)
+2. <https://www.npmjs.com/package/web3>
+
+> **Note**: Setelah kalian mengunduh npm, jalankan perintah `npm i` untuk mengunduh packages yang dibutuhkan.
+
+`CompilerByRemote.js` memiliki bug terkait dengan `Invalid member of stdlib` (ref: <https://github.com/ethereum/solc-js/issues/537>). Dengan demikian, pakai `compileByBinary.js` sesuai dengan arahan pada github issues yang telah disebutkan.
 
 ## Note
 
