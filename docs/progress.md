@@ -55,8 +55,8 @@ Setiap perintah dijalankan pada node yang berbeda dengan working directory berup
 2. Jalankan 2 Node lainnya
 
   ```shell
-  besu --config-file=./src/networks/ethash/config/node/node.toml --data-path=./src/networks/ethash/nodes/node-2/data--bootnodes=<Node-1 Enode URL> --p2p-port=30304
-  besu --config-file=./src/networks/ethash/config/node/node.toml --data-path=./src/networks/ethash/nodes/node-3/data --bootnodes=<Node-1 Enode URL> --p2p-port=30305
+  besu --config-file=./src/networks/ethash/config/node/node.toml --data-path=./src/networks/ethash/nodes/node-2/data --bootnodes=enode://6c2d168d2797090078406024ec1a9b726872046f6fa14ca7e0fbf448912a56fedd337c3908f2d9e66b98e7dc0f8024fcf41707d844dafbca530cbad4482a4edc@127.0.0.1:30303 --p2p-port=30304
+  besu --config-file=./src/networks/ethash/config/node/node.toml --data-path=./src/networks/ethash/nodes/node-3/data --bootnodes=enode://6c2d168d2797090078406024ec1a9b726872046f6fa14ca7e0fbf448912a56fedd337c3908f2d9e66b98e7dc0f8024fcf41707d844dafbca530cbad4482a4edc@127.0.0.1:30303 --p2p-port=30305
   ```
 
   > *Note*: Node-1 Enode URL dapat dilihat ketika menjalankan perintah `Jalankan bootnode`.
@@ -67,10 +67,15 @@ untuk mendeploy, kita memerlukan hal berikut.
 
 1. Node package manager (npm)
 2. <https://www.npmjs.com/package/web3>
+3. Truffle diinstal secara global
 
 > **Note**: Setelah kalian mengunduh npm, jalankan perintah `npm i` untuk mengunduh packages yang dibutuhkan.
 
-`CompilerByRemote.js` memiliki bug terkait dengan `Invalid member of stdlib` (ref: <https://github.com/ethereum/solc-js/issues/537>). Dengan demikian, pakai `compileByBinary.js` sesuai dengan arahan pada github issues yang telah disebutkan.
+Jalankan perintah berikut untuk men-compile dan men-deploy smart contract:
+
+```shell
+truffle migrate --network besu
+```
 
 ## Note
 
