@@ -5957,12 +5957,12 @@
     "1337": {
       "events": {},
       "links": {},
-      "address": "0x05d91B9031A655d08E654177336d08543ac4B711",
-      "transactionHash": "0x442383a4a5de580d05994d8141436ef5c2febb3272aa28c50133d9d2f062c509"
+      "address": "0x686AfD6e502A81D2e77f2e038A23C0dEf4949A20",
+      "transactionHash": "0xcb26d543eea20fd3801d1b40dfb534056dcf30c09ca9ceac9283b52184d4f76c"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-05-06T08:48:42.506Z",
+  "updatedAt": "2024-05-09T13:29:52.496Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
