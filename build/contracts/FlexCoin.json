@@ -115,13 +115,13 @@
       "type": "event"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.4.11+commit.68ef5810\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_from\",\"type\":\"address\"},{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"transferHouse\",\"outputs\":[],\"payable\":false,\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"getHouse\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"},{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"numHouses\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"newHouse\",\"outputs\":[],\"payable\":true,\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"flexCoinAmount\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"buyerFlex\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"smartMeter\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"flexAmount\",\"type\":\"int256\"},{\"indexed\":false,\"name\":\"interval\",\"type\":\"uint256[]\"}],\"name\":\"smartMeterPlan\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/FlexCoin.sol\":\"FlexCoin\"},\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/FlexCoin.sol\":{\"keccak256\":\"0xd8252767deb4db53fe839a52bdee1c2f293a3086bdd90c5a497a7b50560f5057\",\"urls\":[\"bzzr://f9ce276666f078fb1f32d5852dad32b2bb1fab7b1f63ec70b657780b2a8ad814\"]}},\"version\":1}",
-  "bytecode": "0x6060604052341561000c57fe5b5b61051e8061001c6000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063052c36c01461005c5780633991737a146100ba5780638d8447f614610137578063fa481f861461015d575bfe5b341561006457fe5b6100b8600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091905050610167565b005b34156100c257fe5b6100ee600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610394565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390f35b341561013f57fe5b610147610448565b6040518082815260200191505060405180910390f35b61016561044e565b005b80600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154101515156101b95760006000fd5b600060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002015481600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154011015151561024f5760006000fd5b80600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002016000828254039250508190555080600060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600201600082825401925050819055507fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef838383604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a15b505050565b60006000600060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154915091505b915091565b60015481565b6000600160015401600181905550600060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000209050338160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550642e90edd00081600201819055505b505600a165627a7a72305820dd79f36103b7d6311c551b81b5909b46bf3ac48fbccf46573cbb4c43fd8123af0029",
-  "deployedBytecode": "0x60606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063052c36c01461005c5780633991737a146100ba5780638d8447f614610137578063fa481f861461015d575bfe5b341561006457fe5b6100b8600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091905050610167565b005b34156100c257fe5b6100ee600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610394565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390f35b341561013f57fe5b610147610448565b6040518082815260200191505060405180910390f35b61016561044e565b005b80600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154101515156101b95760006000fd5b600060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002015481600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154011015151561024f5760006000fd5b80600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002016000828254039250508190555080600060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600201600082825401925050819055507fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef838383604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a15b505050565b60006000600060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154915091505b915091565b60015481565b6000600160015401600181905550600060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000209050338160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550642e90edd00081600201819055505b505600a165627a7a72305820dd79f36103b7d6311c551b81b5909b46bf3ac48fbccf46573cbb4c43fd8123af0029",
-  "sourceMap": "212:1400:0:-;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "212:1400:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1058:527;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;889:163;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;382:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;667:192;;;;;;1058:527;1173:7;1140:6;:13;1147:5;1140:13;;;;;;;;;;;;;;;:29;;;:40;;1132:49;;;;;;;;1284:6;:11;1291:3;1284:11;;;;;;;;;;;;;;;:27;;;1273:7;1243:6;:11;1250:3;1243:11;;;;;;;;;;;;;;;:27;;;:37;:68;;1235:77;;;;;;;;1378:7;1345:6;:13;1352:5;1345:13;;;;;;;;;;;;;;;:29;;;:40;;;;;;;;;;;1473:7;1442:6;:11;1449:3;1442:11;;;;;;;;;;;;;;;:27;;;:38;;;;;;;;;;;1549:29;1558:5;1565:3;1570:7;1549:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1058:527;;;;:::o;889:163::-;950:7;959:4;983:6;:16;990:8;983:16;;;;;;;;;;;;;;;:27;;;;;;;;;;;;1012:6;:16;1019:8;1012:16;;;;;;;;;;;;;;;:32;;;975:70;;;;889:163;;;;:::o;382:21::-;;;;:::o;667:192::-;747:7;736:1;724:9;;:13;712:9;:25;;;;757:6;:18;764:10;757:18;;;;;;;;;;;;;;;747:28;;800:10;785:1;:12;;;:25;;;;;;;;;;;;;;;;;;840:12;820:1;:17;;:32;;;;667:192;;:::o",
-  "source": "\npragma solidity ^0.4.11;\n\n// This contract must build the coin that should be used in the different trading mechanisms.\n// If other things are common for the mechanisms, this is the place to include the things\n\ncontract FlexCoin {\n\n    struct House {\n        address owner;\n        address smartMeter;\n        uint flexCoinBalance;\n    }\n\n    mapping(address => House) houses;\n    uint public numHouses;\n\n    event Transfer(address from, address to, uint flexCoinAmount);\n    event smartMeterPlan(address buyerFlex, address smartMeter, int flexAmount, uint[] interval);\n    // This event is sent to the smart meters, telling them what to do, and when to do it.\n\n    function newHouse() payable public {\n        numHouses = numHouses + 1;\n        House h = houses[msg.sender];\n        h.smartMeter = msg.sender;\n        h.flexCoinBalance = 200000000000;\n    }\n    // gas cost: 37 041\n\n    function getHouse(address _address) public constant returns (address, uint) {\n        return (houses[_address].smartMeter, houses[_address].flexCoinBalance);\n    }\n\n    function transferHouse(address _from, address _to, uint _amount){\n        require(houses[_from].flexCoinBalance >= _amount);           // Check if the sender has enough\n        require(houses[_to].flexCoinBalance + _amount >= houses[_to].flexCoinBalance); // Check for overflows\n        houses[_from].flexCoinBalance -= _amount;                    // Subtract from the sender\n        houses[_to].flexCoinBalance += _amount;                           // Add the same to the recipient\n        Transfer(_from, _to, _amount);\n    }\n    // gas cost: 37 878\n\n}\n",
-  "sourcePath": "/home/lyzander/Documents/Proyek/Sisdis/sisdis-tk/contracts/FlexCoin.sol",
+  "metadata": "{\"compiler\":{\"version\":\"0.4.11+commit.68ef5810\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_from\",\"type\":\"address\"},{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"transferHouse\",\"outputs\":[],\"payable\":false,\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"getHouse\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"},{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"numHouses\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"newHouse\",\"outputs\":[],\"payable\":true,\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"flexCoinAmount\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"buyerFlex\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"smartMeter\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"flexAmount\",\"type\":\"int256\"},{\"indexed\":false,\"name\":\"interval\",\"type\":\"uint256[]\"}],\"name\":\"smartMeterPlan\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/FlexCoin.sol\":\"FlexCoin\"},\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Duration.sol\":{\"keccak256\":\"0xd99bb59cf939aed2282ca7ea99418980b1e17b313a41726ffda25195a73360cc\",\"urls\":[\"bzzr://a005fbf724f2521dcdb23085c5847534013637ceab626ef77911b97758189535\"]},\"project:/contracts/DurationSecure.sol\":{\"keccak256\":\"0xd0201858bb15af3e9130fc3f5e3ab74010edd44ff11058c1d33d82f388be9a93\",\"urls\":[\"bzzr://a87c0d6978a7a2bf815ceba47d9716d0962b1f4c691eaf661ba2146224559651\"]},\"project:/contracts/FlexCoin.sol\":{\"keccak256\":\"0x72741e120706a84abfa13f1d51404d2d346e2b6b1974e3f7eebf82f7a580ef34\",\"urls\":[\"bzzr://02ededd3f8d643221ee90c793d5f359fe17fca6cef1a0c6dbb50450ab59c5612\"]},\"project:/contracts/FutureBlock.sol\":{\"keccak256\":\"0xa4da3a3f9116dd0eed858d897a2514838e7c08242f1df411e7366fcfe2bcae1a\",\"urls\":[\"bzzr://5676de162bd146eb0ea7c24a529e07c44e925c440b2bad26071a7845a35c390d\"]},\"project:/contracts/RealTime.sol\":{\"keccak256\":\"0xf70e13a5224a0b1f66b47b41f8154fc5c01f11bb5add38fd24d28e05f2eb022f\",\"urls\":[\"bzzr://80e919040ffac165a844cd4383210b0eeb83e53e4e586f6f26835b67c3f7a97d\"]}},\"version\":1}",
+  "bytecode": "0x6060604052341561000c57fe5b5b61051e8061001c6000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063052c36c01461005c5780633991737a146100ba5780638d8447f614610137578063fa481f861461015d575bfe5b341561006457fe5b6100b8600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091905050610167565b005b34156100c257fe5b6100ee600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610394565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390f35b341561013f57fe5b610147610448565b6040518082815260200191505060405180910390f35b61016561044e565b005b80600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154101515156101b95760006000fd5b600060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002015481600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154011015151561024f5760006000fd5b80600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002016000828254039250508190555080600060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600201600082825401925050819055507fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef838383604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a15b505050565b60006000600060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154915091505b915091565b60015481565b6000600160015401600181905550600060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000209050338160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550642e90edd00081600201819055505b505600a165627a7a723058200fd87e15ceffaf98ecefac969b9a0f0bb71f6e1019b24a183951e703f29cd83b0029",
+  "deployedBytecode": "0x60606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063052c36c01461005c5780633991737a146100ba5780638d8447f614610137578063fa481f861461015d575bfe5b341561006457fe5b6100b8600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091905050610167565b005b34156100c257fe5b6100ee600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610394565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390f35b341561013f57fe5b610147610448565b6040518082815260200191505060405180910390f35b61016561044e565b005b80600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154101515156101b95760006000fd5b600060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002015481600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154011015151561024f5760006000fd5b80600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206002016000828254039250508190555080600060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600201600082825401925050819055507fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef838383604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828152602001935050505060405180910390a15b505050565b60006000600060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020154915091505b915091565b60015481565b6000600160015401600181905550600060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000209050338160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550642e90edd00081600201819055505b505600a165627a7a723058200fd87e15ceffaf98ecefac969b9a0f0bb71f6e1019b24a183951e703f29cd83b0029",
+  "sourceMap": "30:1091:2:-;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "30:1091:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;763:354;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;594:163;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;200:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;395:192;;;;;;763:354;878:7;845:6;:13;852:5;845:13;;;;;;;;;;;;;;;:29;;;:40;;837:49;;;;;;;;945:6;:11;952:3;945:11;;;;;;;;;;;;;;;:27;;;934:7;904:6;:11;911:3;904:11;;;;;;;;;;;;;;;:27;;;:37;:68;;896:77;;;;;;;;1016:7;983:6;:13;990:5;983:13;;;;;;;;;;;;;;;:29;;;:40;;;;;;;;;;;1064:7;1033:6;:11;1040:3;1033:11;;;;;;;;;;;;;;;:27;;;:38;;;;;;;;;;;1081:29;1090:5;1097:3;1102:7;1081:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;763:354;;;;:::o;594:163::-;655:7;664:4;688:6;:16;695:8;688:16;;;;;;;;;;;;;;;:27;;;;;;;;;;;;717:6;:16;724:8;717:16;;;;;;;;;;;;;;;:32;;;680:70;;;;594:163;;;;:::o;200:21::-;;;;:::o;395:192::-;475:7;464:1;452:9;;:13;440:9;:25;;;;485:6;:18;492:10;485:18;;;;;;;;;;;;;;;475:28;;528:10;513:1;:12;;;:25;;;;;;;;;;;;;;;;;;568:12;548:1;:17;;:32;;;;395:192;;:::o",
+  "source": "\npragma solidity ^0.4.11;\n\n\n\n\ncontract FlexCoin {\n\n    struct House {\n        address owner;\n        address smartMeter;\n        uint flexCoinBalance;\n    }\n\n    mapping(address => House) houses;\n    uint public numHouses;\n\n    event Transfer(address from, address to, uint flexCoinAmount);\n    event smartMeterPlan(address buyerFlex, address smartMeter, int flexAmount, uint[] interval);\n\n\n    function newHouse() payable public {\n        numHouses = numHouses + 1;\n        House h = houses[msg.sender];\n        h.smartMeter = msg.sender;\n        h.flexCoinBalance = 200000000000;\n    }\n\n\n    function getHouse(address _address) public constant returns (address, uint) {\n        return (houses[_address].smartMeter, houses[_address].flexCoinBalance);\n    }\n\n    function transferHouse(address _from, address _to, uint _amount){\n        require(houses[_from].flexCoinBalance >= _amount);\n        require(houses[_to].flexCoinBalance + _amount >= houses[_to].flexCoinBalance);\n        houses[_from].flexCoinBalance -= _amount;\n        houses[_to].flexCoinBalance += _amount;\n        Transfer(_from, _to, _amount);\n    }\n\n\n}\n",
+  "sourcePath": "/home/rule/Code/SISDIS/sisdis-tk/contracts/FlexCoin.sol",
   "legacyAST": {
     "children": [
       {
@@ -133,16 +133,16 @@
             ".11"
           ]
         },
-        "id": 1,
+        "id": 524,
         "name": "PragmaDirective",
-        "src": "1:24:0"
+        "src": "1:24:2"
       },
       {
         "attributes": {
           "fullyImplemented": true,
           "isLibrary": false,
           "linearizedBaseContracts": [
-            137
+            660
           ],
           "name": "FlexCoin"
         },
@@ -165,14 +165,14 @@
                     "attributes": {
                       "name": "address"
                     },
-                    "id": 2,
+                    "id": 525,
                     "name": "ElementaryTypeName",
-                    "src": "260:7:0"
+                    "src": "78:7:2"
                   }
                 ],
-                "id": 3,
+                "id": 526,
                 "name": "VariableDeclaration",
-                "src": "260:13:0"
+                "src": "78:13:2"
               },
               {
                 "attributes": {
@@ -187,14 +187,14 @@
                     "attributes": {
                       "name": "address"
                     },
-                    "id": 4,
+                    "id": 527,
                     "name": "ElementaryTypeName",
-                    "src": "283:7:0"
+                    "src": "101:7:2"
                   }
                 ],
-                "id": 5,
+                "id": 528,
                 "name": "VariableDeclaration",
-                "src": "283:18:0"
+                "src": "101:18:2"
               },
               {
                 "attributes": {
@@ -209,19 +209,19 @@
                     "attributes": {
                       "name": "uint"
                     },
-                    "id": 6,
+                    "id": 529,
                     "name": "ElementaryTypeName",
-                    "src": "311:4:0"
+                    "src": "129:4:2"
                   }
                 ],
-                "id": 7,
+                "id": 530,
                 "name": "VariableDeclaration",
-                "src": "311:20:0"
+                "src": "129:20:2"
               }
             ],
-            "id": 8,
+            "id": 531,
             "name": "StructDefinition",
-            "src": "237:101:0"
+            "src": "55:101:2"
           },
           {
             "attributes": {
@@ -238,27 +238,27 @@
                     "attributes": {
                       "name": "address"
                     },
-                    "id": 9,
+                    "id": 532,
                     "name": "ElementaryTypeName",
-                    "src": "352:7:0"
+                    "src": "170:7:2"
                   },
                   {
                     "attributes": {
                       "name": "House"
                     },
-                    "id": 10,
+                    "id": 533,
                     "name": "UserDefinedTypeName",
-                    "src": "363:5:0"
+                    "src": "181:5:2"
                   }
                 ],
-                "id": 11,
+                "id": 534,
                 "name": "Mapping",
-                "src": "344:25:0"
+                "src": "162:25:2"
               }
             ],
-            "id": 12,
+            "id": 535,
             "name": "VariableDeclaration",
-            "src": "344:32:0"
+            "src": "162:32:2"
           },
           {
             "attributes": {
@@ -273,14 +273,14 @@
                 "attributes": {
                   "name": "uint"
                 },
-                "id": 13,
+                "id": 536,
                 "name": "ElementaryTypeName",
-                "src": "382:4:0"
+                "src": "200:4:2"
               }
             ],
-            "id": 14,
+            "id": 537,
             "name": "VariableDeclaration",
-            "src": "382:21:0"
+            "src": "200:21:2"
           },
           {
             "attributes": {
@@ -303,14 +303,14 @@
                         "attributes": {
                           "name": "address"
                         },
-                        "id": 15,
+                        "id": 538,
                         "name": "ElementaryTypeName",
-                        "src": "425:7:0"
+                        "src": "243:7:2"
                       }
                     ],
-                    "id": 16,
+                    "id": 539,
                     "name": "VariableDeclaration",
-                    "src": "425:12:0"
+                    "src": "243:12:2"
                   },
                   {
                     "attributes": {
@@ -326,14 +326,14 @@
                         "attributes": {
                           "name": "address"
                         },
-                        "id": 17,
+                        "id": 540,
                         "name": "ElementaryTypeName",
-                        "src": "439:7:0"
+                        "src": "257:7:2"
                       }
                     ],
-                    "id": 18,
+                    "id": 541,
                     "name": "VariableDeclaration",
-                    "src": "439:10:0"
+                    "src": "257:10:2"
                   },
                   {
                     "attributes": {
@@ -349,24 +349,24 @@
                         "attributes": {
                           "name": "uint"
                         },
-                        "id": 19,
+                        "id": 542,
                         "name": "ElementaryTypeName",
-                        "src": "451:4:0"
+                        "src": "269:4:2"
                       }
                     ],
-                    "id": 20,
+                    "id": 543,
                     "name": "VariableDeclaration",
-                    "src": "451:19:0"
+                    "src": "269:19:2"
                   }
                 ],
-                "id": 21,
+                "id": 544,
                 "name": "ParameterList",
-                "src": "424:47:0"
+                "src": "242:47:2"
               }
             ],
-            "id": 22,
+            "id": 545,
             "name": "EventDefinition",
-            "src": "410:62:0"
+            "src": "228:62:2"
           },
           {
             "attributes": {
@@ -389,14 +389,14 @@
                         "attributes": {
                           "name": "address"
                         },
-                        "id": 23,
+                        "id": 546,
                         "name": "ElementaryTypeName",
-                        "src": "498:7:0"
+                        "src": "316:7:2"
                       }
                     ],
-                    "id": 24,
+                    "id": 547,
                     "name": "VariableDeclaration",
-                    "src": "498:17:0"
+                    "src": "316:17:2"
                   },
                   {
                     "attributes": {
@@ -412,14 +412,14 @@
                         "attributes": {
                           "name": "address"
                         },
-                        "id": 25,
+                        "id": 548,
                         "name": "ElementaryTypeName",
-                        "src": "517:7:0"
+                        "src": "335:7:2"
                       }
                     ],
-                    "id": 26,
+                    "id": 549,
                     "name": "VariableDeclaration",
-                    "src": "517:18:0"
+                    "src": "335:18:2"
                   },
                   {
                     "attributes": {
@@ -435,14 +435,14 @@
                         "attributes": {
                           "name": "int"
                         },
-                        "id": 27,
+                        "id": 550,
                         "name": "ElementaryTypeName",
-                        "src": "537:3:0"
+                        "src": "355:3:2"
                       }
                     ],
-                    "id": 28,
+                    "id": 551,
                     "name": "VariableDeclaration",
-                    "src": "537:14:0"
+                    "src": "355:14:2"
                   },
                   {
                     "attributes": {
@@ -460,29 +460,29 @@
                             "attributes": {
                               "name": "uint"
                             },
-                            "id": 29,
+                            "id": 552,
                             "name": "ElementaryTypeName",
-                            "src": "553:4:0"
+                            "src": "371:4:2"
                           }
                         ],
-                        "id": 30,
+                        "id": 553,
                         "name": "ArrayTypeName",
-                        "src": "553:6:0"
+                        "src": "371:6:2"
                       }
                     ],
-                    "id": 31,
+                    "id": 554,
                     "name": "VariableDeclaration",
-                    "src": "553:15:0"
+                    "src": "371:15:2"
                   }
                 ],
-                "id": 32,
+                "id": 555,
                 "name": "ParameterList",
-                "src": "497:72:0"
+                "src": "315:72:2"
               }
             ],
-            "id": 33,
+            "id": 556,
             "name": "EventDefinition",
-            "src": "477:93:0"
+            "src": "295:93:2"
           },
           {
             "attributes": {
@@ -494,15 +494,15 @@
             "children": [
               {
                 "children": [],
-                "id": 34,
+                "id": 557,
                 "name": "ParameterList",
-                "src": "684:2:0"
+                "src": "412:2:2"
               },
               {
                 "children": [],
-                "id": 35,
+                "id": 558,
                 "name": "ParameterList",
-                "src": "702:0:0"
+                "src": "430:0:2"
               },
               {
                 "children": [
@@ -519,9 +519,9 @@
                               "type": "uint256",
                               "value": "numHouses"
                             },
-                            "id": 36,
+                            "id": 559,
                             "name": "Identifier",
-                            "src": "712:9:0"
+                            "src": "440:9:2"
                           },
                           {
                             "attributes": {
@@ -534,9 +534,9 @@
                                   "type": "uint256",
                                   "value": "numHouses"
                                 },
-                                "id": 37,
+                                "id": 560,
                                 "name": "Identifier",
-                                "src": "724:9:0"
+                                "src": "452:9:2"
                               },
                               {
                                 "attributes": {
@@ -546,24 +546,24 @@
                                   "type": "int_const 1",
                                   "value": "1"
                                 },
-                                "id": 38,
+                                "id": 561,
                                 "name": "Literal",
-                                "src": "736:1:0"
+                                "src": "464:1:2"
                               }
                             ],
-                            "id": 39,
+                            "id": 562,
                             "name": "BinaryOperation",
-                            "src": "724:13:0"
+                            "src": "452:13:2"
                           }
                         ],
-                        "id": 40,
+                        "id": 563,
                         "name": "Assignment",
-                        "src": "712:25:0"
+                        "src": "440:25:2"
                       }
                     ],
-                    "id": 41,
+                    "id": 564,
                     "name": "ExpressionStatement",
-                    "src": "712:25:0"
+                    "src": "440:25:2"
                   },
                   {
                     "children": [
@@ -580,14 +580,14 @@
                             "attributes": {
                               "name": "House"
                             },
-                            "id": 42,
+                            "id": 565,
                             "name": "UserDefinedTypeName",
-                            "src": "747:5:0"
+                            "src": "475:5:2"
                           }
                         ],
-                        "id": 43,
+                        "id": 566,
                         "name": "VariableDeclaration",
-                        "src": "747:7:0"
+                        "src": "475:7:2"
                       },
                       {
                         "attributes": {
@@ -599,9 +599,9 @@
                               "type": "mapping(address => struct FlexCoin.House storage ref)",
                               "value": "houses"
                             },
-                            "id": 44,
+                            "id": 567,
                             "name": "Identifier",
-                            "src": "757:6:0"
+                            "src": "485:6:2"
                           },
                           {
                             "attributes": {
@@ -614,24 +614,24 @@
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 45,
+                                "id": 568,
                                 "name": "Identifier",
-                                "src": "764:3:0"
+                                "src": "492:3:2"
                               }
                             ],
-                            "id": 46,
+                            "id": 569,
                             "name": "MemberAccess",
-                            "src": "764:10:0"
+                            "src": "492:10:2"
                           }
                         ],
-                        "id": 47,
+                        "id": 570,
                         "name": "IndexAccess",
-                        "src": "757:18:0"
+                        "src": "485:18:2"
                       }
                     ],
-                    "id": 48,
+                    "id": 571,
                     "name": "VariableDeclarationStatement",
-                    "src": "747:28:0"
+                    "src": "475:28:2"
                   },
                   {
                     "children": [
@@ -652,14 +652,14 @@
                                   "type": "struct FlexCoin.House storage pointer",
                                   "value": "h"
                                 },
-                                "id": 49,
+                                "id": 572,
                                 "name": "Identifier",
-                                "src": "785:1:0"
+                                "src": "513:1:2"
                               }
                             ],
-                            "id": 51,
+                            "id": 574,
                             "name": "MemberAccess",
-                            "src": "785:12:0"
+                            "src": "513:12:2"
                           },
                           {
                             "attributes": {
@@ -672,24 +672,24 @@
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 52,
+                                "id": 575,
                                 "name": "Identifier",
-                                "src": "800:3:0"
+                                "src": "528:3:2"
                               }
                             ],
-                            "id": 53,
+                            "id": 576,
                             "name": "MemberAccess",
-                            "src": "800:10:0"
+                            "src": "528:10:2"
                           }
                         ],
-                        "id": 54,
+                        "id": 577,
                         "name": "Assignment",
-                        "src": "785:25:0"
+                        "src": "513:25:2"
                       }
                     ],
-                    "id": 55,
+                    "id": 578,
                     "name": "ExpressionStatement",
-                    "src": "785:25:0"
+                    "src": "513:25:2"
                   },
                   {
                     "children": [
@@ -710,14 +710,14 @@
                                   "type": "struct FlexCoin.House storage pointer",
                                   "value": "h"
                                 },
-                                "id": 56,
+                                "id": 579,
                                 "name": "Identifier",
-                                "src": "820:1:0"
+                                "src": "548:1:2"
                               }
                             ],
-                            "id": 58,
+                            "id": 581,
                             "name": "MemberAccess",
-                            "src": "820:17:0"
+                            "src": "548:17:2"
                           },
                           {
                             "attributes": {
@@ -727,29 +727,29 @@
                               "type": "int_const 200000000000",
                               "value": "200000000000"
                             },
-                            "id": 59,
+                            "id": 582,
                             "name": "Literal",
-                            "src": "840:12:0"
+                            "src": "568:12:2"
                           }
                         ],
-                        "id": 60,
+                        "id": 583,
                         "name": "Assignment",
-                        "src": "820:32:0"
+                        "src": "548:32:2"
                       }
                     ],
-                    "id": 61,
+                    "id": 584,
                     "name": "ExpressionStatement",
-                    "src": "820:32:0"
+                    "src": "548:32:2"
                   }
                 ],
-                "id": 62,
+                "id": 585,
                 "name": "Block",
-                "src": "702:157:0"
+                "src": "430:157:2"
               }
             ],
-            "id": 63,
+            "id": 586,
             "name": "FunctionDefinition",
-            "src": "667:192:0"
+            "src": "395:192:2"
           },
           {
             "attributes": {
@@ -774,19 +774,19 @@
                         "attributes": {
                           "name": "address"
                         },
-                        "id": 64,
+                        "id": 587,
                         "name": "ElementaryTypeName",
-                        "src": "907:7:0"
+                        "src": "612:7:2"
                       }
                     ],
-                    "id": 65,
+                    "id": 588,
                     "name": "VariableDeclaration",
-                    "src": "907:16:0"
+                    "src": "612:16:2"
                   }
                 ],
-                "id": 66,
+                "id": 589,
                 "name": "ParameterList",
-                "src": "906:18:0"
+                "src": "611:18:2"
               },
               {
                 "children": [
@@ -803,14 +803,14 @@
                         "attributes": {
                           "name": "address"
                         },
-                        "id": 67,
+                        "id": 590,
                         "name": "ElementaryTypeName",
-                        "src": "950:7:0"
+                        "src": "655:7:2"
                       }
                     ],
-                    "id": 68,
+                    "id": 591,
                     "name": "VariableDeclaration",
-                    "src": "950:7:0"
+                    "src": "655:7:2"
                   },
                   {
                     "attributes": {
@@ -825,19 +825,19 @@
                         "attributes": {
                           "name": "uint"
                         },
-                        "id": 69,
+                        "id": 592,
                         "name": "ElementaryTypeName",
-                        "src": "959:4:0"
+                        "src": "664:4:2"
                       }
                     ],
-                    "id": 70,
+                    "id": 593,
                     "name": "VariableDeclaration",
-                    "src": "959:4:0"
+                    "src": "664:4:2"
                   }
                 ],
-                "id": 71,
+                "id": 594,
                 "name": "ParameterList",
-                "src": "949:15:0"
+                "src": "654:15:2"
               },
               {
                 "children": [
@@ -861,28 +861,28 @@
                                       "type": "mapping(address => struct FlexCoin.House storage ref)",
                                       "value": "houses"
                                     },
-                                    "id": 72,
+                                    "id": 595,
                                     "name": "Identifier",
-                                    "src": "983:6:0"
+                                    "src": "688:6:2"
                                   },
                                   {
                                     "attributes": {
                                       "type": "address",
                                       "value": "_address"
                                     },
-                                    "id": 73,
+                                    "id": 596,
                                     "name": "Identifier",
-                                    "src": "990:8:0"
+                                    "src": "695:8:2"
                                   }
                                 ],
-                                "id": 74,
+                                "id": 597,
                                 "name": "IndexAccess",
-                                "src": "983:16:0"
+                                "src": "688:16:2"
                               }
                             ],
-                            "id": 75,
+                            "id": 598,
                             "name": "MemberAccess",
-                            "src": "983:27:0"
+                            "src": "688:27:2"
                           },
                           {
                             "attributes": {
@@ -900,48 +900,48 @@
                                       "type": "mapping(address => struct FlexCoin.House storage ref)",
                                       "value": "houses"
                                     },
-                                    "id": 76,
+                                    "id": 599,
                                     "name": "Identifier",
-                                    "src": "1012:6:0"
+                                    "src": "717:6:2"
                                   },
                                   {
                                     "attributes": {
                                       "type": "address",
                                       "value": "_address"
                                     },
-                                    "id": 77,
+                                    "id": 600,
                                     "name": "Identifier",
-                                    "src": "1019:8:0"
+                                    "src": "724:8:2"
                                   }
                                 ],
-                                "id": 78,
+                                "id": 601,
                                 "name": "IndexAccess",
-                                "src": "1012:16:0"
+                                "src": "717:16:2"
                               }
                             ],
-                            "id": 79,
+                            "id": 602,
                             "name": "MemberAccess",
-                            "src": "1012:32:0"
+                            "src": "717:32:2"
                           }
                         ],
-                        "id": 80,
+                        "id": 603,
                         "name": "TupleExpression",
-                        "src": "982:63:0"
+                        "src": "687:63:2"
                       }
                     ],
-                    "id": 81,
+                    "id": 604,
                     "name": "Return",
-                    "src": "975:70:0"
+                    "src": "680:70:2"
                   }
                 ],
-                "id": 82,
+                "id": 605,
                 "name": "Block",
-                "src": "965:87:0"
+                "src": "670:87:2"
               }
             ],
-            "id": 83,
+            "id": 606,
             "name": "FunctionDefinition",
-            "src": "889:163:0"
+            "src": "594:163:2"
           },
           {
             "attributes": {
@@ -966,14 +966,14 @@
                         "attributes": {
                           "name": "address"
                         },
-                        "id": 84,
+                        "id": 607,
                         "name": "ElementaryTypeName",
-                        "src": "1081:7:0"
+                        "src": "786:7:2"
                       }
                     ],
-                    "id": 85,
+                    "id": 608,
                     "name": "VariableDeclaration",
-                    "src": "1081:13:0"
+                    "src": "786:13:2"
                   },
                   {
                     "attributes": {
@@ -988,14 +988,14 @@
                         "attributes": {
                           "name": "address"
                         },
-                        "id": 86,
+                        "id": 609,
                         "name": "ElementaryTypeName",
-                        "src": "1096:7:0"
+                        "src": "801:7:2"
                       }
                     ],
-                    "id": 87,
+                    "id": 610,
                     "name": "VariableDeclaration",
-                    "src": "1096:11:0"
+                    "src": "801:11:2"
                   },
                   {
                     "attributes": {
@@ -1010,25 +1010,25 @@
                         "attributes": {
                           "name": "uint"
                         },
-                        "id": 88,
+                        "id": 611,
                         "name": "ElementaryTypeName",
-                        "src": "1109:4:0"
+                        "src": "814:4:2"
                       }
                     ],
-                    "id": 89,
+                    "id": 612,
                     "name": "VariableDeclaration",
-                    "src": "1109:12:0"
+                    "src": "814:12:2"
                   }
                 ],
-                "id": 90,
+                "id": 613,
                 "name": "ParameterList",
-                "src": "1080:42:0"
+                "src": "785:42:2"
               },
               {
                 "children": [],
-                "id": 91,
+                "id": 614,
                 "name": "ParameterList",
-                "src": "1122:0:0"
+                "src": "827:0:2"
               },
               {
                 "children": [
@@ -1045,9 +1045,9 @@
                               "type": "function (bool)",
                               "value": "require"
                             },
-                            "id": 92,
+                            "id": 615,
                             "name": "Identifier",
-                            "src": "1132:7:0"
+                            "src": "837:7:2"
                           },
                           {
                             "attributes": {
@@ -1071,52 +1071,52 @@
                                           "type": "mapping(address => struct FlexCoin.House storage ref)",
                                           "value": "houses"
                                         },
-                                        "id": 93,
+                                        "id": 616,
                                         "name": "Identifier",
-                                        "src": "1140:6:0"
+                                        "src": "845:6:2"
                                       },
                                       {
                                         "attributes": {
                                           "type": "address",
                                           "value": "_from"
                                         },
-                                        "id": 94,
+                                        "id": 617,
                                         "name": "Identifier",
-                                        "src": "1147:5:0"
+                                        "src": "852:5:2"
                                       }
                                     ],
-                                    "id": 95,
+                                    "id": 618,
                                     "name": "IndexAccess",
-                                    "src": "1140:13:0"
+                                    "src": "845:13:2"
                                   }
                                 ],
-                                "id": 96,
+                                "id": 619,
                                 "name": "MemberAccess",
-                                "src": "1140:29:0"
+                                "src": "845:29:2"
                               },
                               {
                                 "attributes": {
                                   "type": "uint256",
                                   "value": "_amount"
                                 },
-                                "id": 97,
+                                "id": 620,
                                 "name": "Identifier",
-                                "src": "1173:7:0"
+                                "src": "878:7:2"
                               }
                             ],
-                            "id": 98,
+                            "id": 621,
                             "name": "BinaryOperation",
-                            "src": "1140:40:0"
+                            "src": "845:40:2"
                           }
                         ],
-                        "id": 99,
+                        "id": 622,
                         "name": "FunctionCall",
-                        "src": "1132:49:0"
+                        "src": "837:49:2"
                       }
                     ],
-                    "id": 100,
+                    "id": 623,
                     "name": "ExpressionStatement",
-                    "src": "1132:49:0"
+                    "src": "837:49:2"
                   },
                   {
                     "children": [
@@ -1131,9 +1131,9 @@
                               "type": "function (bool)",
                               "value": "require"
                             },
-                            "id": 101,
+                            "id": 624,
                             "name": "Identifier",
-                            "src": "1235:7:0"
+                            "src": "896:7:2"
                           },
                           {
                             "attributes": {
@@ -1163,42 +1163,42 @@
                                               "type": "mapping(address => struct FlexCoin.House storage ref)",
                                               "value": "houses"
                                             },
-                                            "id": 102,
+                                            "id": 625,
                                             "name": "Identifier",
-                                            "src": "1243:6:0"
+                                            "src": "904:6:2"
                                           },
                                           {
                                             "attributes": {
                                               "type": "address",
                                               "value": "_to"
                                             },
-                                            "id": 103,
+                                            "id": 626,
                                             "name": "Identifier",
-                                            "src": "1250:3:0"
+                                            "src": "911:3:2"
                                           }
                                         ],
-                                        "id": 104,
+                                        "id": 627,
                                         "name": "IndexAccess",
-                                        "src": "1243:11:0"
+                                        "src": "904:11:2"
                                       }
                                     ],
-                                    "id": 105,
+                                    "id": 628,
                                     "name": "MemberAccess",
-                                    "src": "1243:27:0"
+                                    "src": "904:27:2"
                                   },
                                   {
                                     "attributes": {
                                       "type": "uint256",
                                       "value": "_amount"
                                     },
-                                    "id": 106,
+                                    "id": 629,
                                     "name": "Identifier",
-                                    "src": "1273:7:0"
+                                    "src": "934:7:2"
                                   }
                                 ],
-                                "id": 107,
+                                "id": 630,
                                 "name": "BinaryOperation",
-                                "src": "1243:37:0"
+                                "src": "904:37:2"
                               },
                               {
                                 "attributes": {
@@ -1216,43 +1216,43 @@
                                           "type": "mapping(address => struct FlexCoin.House storage ref)",
                                           "value": "houses"
                                         },
-                                        "id": 108,
+                                        "id": 631,
                                         "name": "Identifier",
-                                        "src": "1284:6:0"
+                                        "src": "945:6:2"
                                       },
                                       {
                                         "attributes": {
                                           "type": "address",
                                           "value": "_to"
                                         },
-                                        "id": 109,
+                                        "id": 632,
                                         "name": "Identifier",
-                                        "src": "1291:3:0"
+                                        "src": "952:3:2"
                                       }
                                     ],
-                                    "id": 110,
+                                    "id": 633,
                                     "name": "IndexAccess",
-                                    "src": "1284:11:0"
+                                    "src": "945:11:2"
                                   }
                                 ],
-                                "id": 111,
+                                "id": 634,
                                 "name": "MemberAccess",
-                                "src": "1284:27:0"
+                                "src": "945:27:2"
                               }
                             ],
-                            "id": 112,
+                            "id": 635,
                             "name": "BinaryOperation",
-                            "src": "1243:68:0"
+                            "src": "904:68:2"
                           }
                         ],
-                        "id": 113,
+                        "id": 636,
                         "name": "FunctionCall",
-                        "src": "1235:77:0"
+                        "src": "896:77:2"
                       }
                     ],
-                    "id": 114,
+                    "id": 637,
                     "name": "ExpressionStatement",
-                    "src": "1235:77:0"
+                    "src": "896:77:2"
                   },
                   {
                     "children": [
@@ -1278,47 +1278,47 @@
                                       "type": "mapping(address => struct FlexCoin.House storage ref)",
                                       "value": "houses"
                                     },
-                                    "id": 115,
+                                    "id": 638,
                                     "name": "Identifier",
-                                    "src": "1345:6:0"
+                                    "src": "983:6:2"
                                   },
                                   {
                                     "attributes": {
                                       "type": "address",
                                       "value": "_from"
                                     },
-                                    "id": 116,
+                                    "id": 639,
                                     "name": "Identifier",
-                                    "src": "1352:5:0"
+                                    "src": "990:5:2"
                                   }
                                 ],
-                                "id": 117,
+                                "id": 640,
                                 "name": "IndexAccess",
-                                "src": "1345:13:0"
+                                "src": "983:13:2"
                               }
                             ],
-                            "id": 118,
+                            "id": 641,
                             "name": "MemberAccess",
-                            "src": "1345:29:0"
+                            "src": "983:29:2"
                           },
                           {
                             "attributes": {
                               "type": "uint256",
                               "value": "_amount"
                             },
-                            "id": 119,
+                            "id": 642,
                             "name": "Identifier",
-                            "src": "1378:7:0"
+                            "src": "1016:7:2"
                           }
                         ],
-                        "id": 120,
+                        "id": 643,
                         "name": "Assignment",
-                        "src": "1345:40:0"
+                        "src": "983:40:2"
                       }
                     ],
-                    "id": 121,
+                    "id": 644,
                     "name": "ExpressionStatement",
-                    "src": "1345:40:0"
+                    "src": "983:40:2"
                   },
                   {
                     "children": [
@@ -1344,47 +1344,47 @@
                                       "type": "mapping(address => struct FlexCoin.House storage ref)",
                                       "value": "houses"
                                     },
-                                    "id": 122,
+                                    "id": 645,
                                     "name": "Identifier",
-                                    "src": "1442:6:0"
+                                    "src": "1033:6:2"
                                   },
                                   {
                                     "attributes": {
                                       "type": "address",
                                       "value": "_to"
                                     },
-                                    "id": 123,
+                                    "id": 646,
                                     "name": "Identifier",
-                                    "src": "1449:3:0"
+                                    "src": "1040:3:2"
                                   }
                                 ],
-                                "id": 124,
+                                "id": 647,
                                 "name": "IndexAccess",
-                                "src": "1442:11:0"
+                                "src": "1033:11:2"
                               }
                             ],
-                            "id": 125,
+                            "id": 648,
                             "name": "MemberAccess",
-                            "src": "1442:27:0"
+                            "src": "1033:27:2"
                           },
                           {
                             "attributes": {
                               "type": "uint256",
                               "value": "_amount"
                             },
-                            "id": 126,
+                            "id": 649,
                             "name": "Identifier",
-                            "src": "1473:7:0"
+                            "src": "1064:7:2"
                           }
                         ],
-                        "id": 127,
+                        "id": 650,
                         "name": "Assignment",
-                        "src": "1442:38:0"
+                        "src": "1033:38:2"
                       }
                     ],
-                    "id": 128,
+                    "id": 651,
                     "name": "ExpressionStatement",
-                    "src": "1442:38:0"
+                    "src": "1033:38:2"
                   },
                   {
                     "children": [
@@ -1399,61 +1399,61 @@
                               "type": "function (address,address,uint256) constant",
                               "value": "Transfer"
                             },
-                            "id": 129,
+                            "id": 652,
                             "name": "Identifier",
-                            "src": "1549:8:0"
+                            "src": "1081:8:2"
                           },
                           {
                             "attributes": {
                               "type": "address",
                               "value": "_from"
                             },
-                            "id": 130,
+                            "id": 653,
                             "name": "Identifier",
-                            "src": "1558:5:0"
+                            "src": "1090:5:2"
                           },
                           {
                             "attributes": {
                               "type": "address",
                               "value": "_to"
                             },
-                            "id": 131,
+                            "id": 654,
                             "name": "Identifier",
-                            "src": "1565:3:0"
+                            "src": "1097:3:2"
                           },
                           {
                             "attributes": {
                               "type": "uint256",
                               "value": "_amount"
                             },
-                            "id": 132,
+                            "id": 655,
                             "name": "Identifier",
-                            "src": "1570:7:0"
+                            "src": "1102:7:2"
                           }
                         ],
-                        "id": 133,
+                        "id": 656,
                         "name": "FunctionCall",
-                        "src": "1549:29:0"
+                        "src": "1081:29:2"
                       }
                     ],
-                    "id": 134,
+                    "id": 657,
                     "name": "ExpressionStatement",
-                    "src": "1549:29:0"
+                    "src": "1081:29:2"
                   }
                 ],
-                "id": 135,
+                "id": 658,
                 "name": "Block",
-                "src": "1122:463:0"
+                "src": "827:290:2"
               }
             ],
-            "id": 136,
+            "id": 659,
             "name": "FunctionDefinition",
-            "src": "1058:527:0"
+            "src": "763:354:2"
           }
         ],
-        "id": 137,
+        "id": 660,
         "name": "ContractDefinition",
-        "src": "212:1400:0"
+        "src": "30:1091:2"
       }
     ],
     "name": "SourceUnit"
@@ -1466,12 +1466,12 @@
     "1337": {
       "events": {},
       "links": {},
-      "address": "0x42699A7612A82f1d9C36148af9C77354759b210b",
-      "transactionHash": "0x8f61a5561a7c8dce30f9cda4c1ba616156293c026e7f3a81e3e7570e403b1dc5"
+      "address": "0xa50a51c09a5c451C52BB714527E1974b686D8e77",
+      "transactionHash": "0x1b33ceea04107b39dc95a747e6c25874cde405b0fdcaf414fe0459b4ab2e92ac"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-05-03T09:33:41.681Z",
+  "updatedAt": "2024-05-06T08:48:42.497Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

@@ -16,6 +16,10 @@ FlexCoin = web3.eth.contract(address, abi = abi)
 
 numHouses = FlexCoin.caller().numHouses()
 
+print("Number of houses:", numHouses)
+print("Number of nodes:", len(web3.eth.accounts))
+print("Accounts:", web3.eth.accounts)
 if(numHouses == 0):
     for i in range(len(web3.eth.accounts)):
         FlexCoin.transact({'from': web3.eth.accounts[i]}).newHouse()
+        print("House made for node: ", i)
