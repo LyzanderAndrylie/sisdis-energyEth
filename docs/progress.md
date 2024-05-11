@@ -11,6 +11,8 @@ Dokumen ini berisi progress yang telah dilakukan sepanjang TK. Tujuan dokumen in
   - [Menjalankan sebuah node untuk testing](#menjalankan-sebuah-node-untuk-testing)
   - [Membuat jaringan privat dengan ethash (PoW)](#membuat-jaringan-privat-dengan-ethash-pow)
   - [Mendeploy smart contract ke ethash](#mendeploy-smart-contract-ke-ethash)
+  - [Menyiapkan Web3Signer](#menyiapkan-web3signer)
+    - [Membuat signing key configuration file](#membuat-signing-key-configuration-file)
   - [Note](#note)
 
 ## Mempersiapkan Kebutuhan Sistem
@@ -75,6 +77,55 @@ Jalankan perintah berikut untuk men-compile dan men-deploy smart contract:
 
 ```shell
 truffle migrate --network besu
+```
+
+## Menyiapkan Web3Signer
+
+Download Web3Signer dari link: <https://docs.web3signer.consensys.io/get-started/install-binaries>
+
+### Membuat signing key configuration file
+
+Signing key configuration file akan digunakan oleh Web3Signer dalam proses *signing*. Pada proyek ini, private key akan disimpan di folder `keyFiles` dan raw unencrypted files akan digunakan sebagai signing key configuration file untuk mempermudah proses pengerjaan. Hal ini berarti private key yang dihasilkan tidak aman dan hanya digunakan untuk kebutuhan proyek ini saja!
+
+1. Membuat private key dengan format secp256k1.
+
+```shell
+# generate a private key
+openssl ecparam -name secp256k1 -genkey -noout -out ec-secp256k1-private.pem
+
+# extract the public key
+openssl ec -in ec-secp256k1-private.pem -pubout -out ec-secp256k1-public.pem
+
+# hexadecimal encoded private key string.
+openssl ec -in ec-secp256k1-private.pem -text -noout
+```
+
+2. Membuat signing key configuration file dalam format yaml
+
+```shell
+type: "file-raw"
+keyType: "SECP256K1"
+privateKey: "0xaa3d882e938a86957904dcad27a46b044310bd672dba5741d9b61e9f542f6c6b"
+```
+
+3. Jalankan Web3Signer
+
+```shell
+web3signer --key-store-path=./keyFiles/ eth1 --chain-id=1337 --downstream-http-port=8545
+```
+
+> Note: sebelum menjalankan Web3Signer, jaringan hyperledger besu harus dijalankan terlebih dahulu.
+
+4. Cek Web3Signer
+
+```shell
+curl -X GET http://127.0.0.1:9000/upcheck
+```
+
+5. Cek Web3Signer passing requests to Besu
+
+```shell
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":51}' http://127.0.0.1:9000
 ```
 
 ## Note
