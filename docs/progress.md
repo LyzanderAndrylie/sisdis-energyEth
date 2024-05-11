@@ -13,6 +13,7 @@ Dokumen ini berisi progress yang telah dilakukan sepanjang TK. Tujuan dokumen in
   - [Mendeploy smart contract ke ethash](#mendeploy-smart-contract-ke-ethash)
   - [Menyiapkan Web3Signer](#menyiapkan-web3signer)
     - [Membuat signing key configuration file](#membuat-signing-key-configuration-file)
+    - [Utility](#utility)
   - [Note](#note)
 
 ## Mempersiapkan Kebutuhan Sistem
@@ -126,6 +127,14 @@ curl -X GET http://127.0.0.1:9000/upcheck
 
 ```shell
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":51}' http://127.0.0.1:9000
+```
+
+### Utility
+
+Untuk membuat private key sebanyak n dan menyimpannya pada signing key configuration file, kode `utils.sh` dapat digunakan. Untuk menjalankan Web3Signer dengan memanfaatkan private key yang dibuat, jalankan perintah berikut.
+
+```shell
+web3signer --key-store-path=./keyFiles/keys/ eth1 --chain-id=1337 --downstream-http-port=8545
 ```
 
 ## Note
