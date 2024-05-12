@@ -121,7 +121,7 @@
   "sourceMap": "30:1091:2:-;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "30:1091:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;763:354;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;594:163;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;200:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;395:192;;;;;;763:354;878:7;845:6;:13;852:5;845:13;;;;;;;;;;;;;;;:29;;;:40;;837:49;;;;;;;;945:6;:11;952:3;945:11;;;;;;;;;;;;;;;:27;;;934:7;904:6;:11;911:3;904:11;;;;;;;;;;;;;;;:27;;;:37;:68;;896:77;;;;;;;;1016:7;983:6;:13;990:5;983:13;;;;;;;;;;;;;;;:29;;;:40;;;;;;;;;;;1064:7;1033:6;:11;1040:3;1033:11;;;;;;;;;;;;;;;:27;;;:38;;;;;;;;;;;1081:29;1090:5;1097:3;1102:7;1081:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;763:354;;;;:::o;594:163::-;655:7;664:4;688:6;:16;695:8;688:16;;;;;;;;;;;;;;;:27;;;;;;;;;;;;717:6;:16;724:8;717:16;;;;;;;;;;;;;;;:32;;;680:70;;;;594:163;;;;:::o;200:21::-;;;;:::o;395:192::-;475:7;464:1;452:9;;:13;440:9;:25;;;;485:6;:18;492:10;485:18;;;;;;;;;;;;;;;475:28;;528:10;513:1;:12;;;:25;;;;;;;;;;;;;;;;;;568:12;548:1;:17;;:32;;;;395:192;;:::o",
   "source": "\npragma solidity ^0.4.11;\n\n\n\n\ncontract FlexCoin {\n\n    struct House {\n        address owner;\n        address smartMeter;\n        uint flexCoinBalance;\n    }\n\n    mapping(address => House) houses;\n    uint public numHouses;\n\n    event Transfer(address from, address to, uint flexCoinAmount);\n    event smartMeterPlan(address buyerFlex, address smartMeter, int flexAmount, uint[] interval);\n\n\n    function newHouse() payable public {\n        numHouses = numHouses + 1;\n        House h = houses[msg.sender];\n        h.smartMeter = msg.sender;\n        h.flexCoinBalance = 200000000000;\n    }\n\n\n    function getHouse(address _address) public constant returns (address, uint) {\n        return (houses[_address].smartMeter, houses[_address].flexCoinBalance);\n    }\n\n    function transferHouse(address _from, address _to, uint _amount){\n        require(houses[_from].flexCoinBalance >= _amount);\n        require(houses[_to].flexCoinBalance + _amount >= houses[_to].flexCoinBalance);\n        houses[_from].flexCoinBalance -= _amount;\n        houses[_to].flexCoinBalance += _amount;\n        Transfer(_from, _to, _amount);\n    }\n\n\n}\n",
-  "sourcePath": "/home/rule/Code/SISDIS/sisdis-tk/contracts/FlexCoin.sol",
+  "sourcePath": "/home/lyzander/Documents/Proyek/sisdis-tk/contracts/FlexCoin.sol",
   "legacyAST": {
     "children": [
       {
@@ -1466,12 +1466,18 @@
     "1337": {
       "events": {},
       "links": {},
-      "address": "0xfeae27388A65eE984F452f86efFEd42AaBD438FD",
-      "transactionHash": "0x94cd229a0602ddb2c78e78144940698cc280c174ab9cf869201b51275f1816b9"
+      "address": "0x42699A7612A82f1d9C36148af9C77354759b210b",
+      "transactionHash": "0xb79a975a92afb3888096d74fc42ea1e1a75cb5b3dbfa0c295466fb3de65f94fe"
+    },
+    "2018": {
+      "events": {},
+      "links": {},
+      "address": "0x42699A7612A82f1d9C36148af9C77354759b210b",
+      "transactionHash": "0x46ca9aaba221e3c29b375f5eb236e1d7f6e99f017979970fcdf935157d50648d"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-05-09T13:29:52.485Z",
+  "updatedAt": "2024-05-12T09:18:39.726Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
