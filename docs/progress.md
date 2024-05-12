@@ -14,6 +14,7 @@ Dokumen ini berisi progress yang telah dilakukan sepanjang TK. Tujuan dokumen in
   - [Menyiapkan Web3Signer](#menyiapkan-web3signer)
     - [Membuat signing key configuration file](#membuat-signing-key-configuration-file)
     - [Utility](#utility)
+    - [Menyiapkan Chainlens Blockchain explorer](#menyiapkan-chainlens-blockchain-explorer)
   - [Note](#note)
 
 ## Mempersiapkan Kebutuhan Sistem
@@ -135,6 +136,24 @@ Untuk membuat private key sebanyak n dan menyimpannya pada signing key configura
 
 ```shell
 web3signer --key-store-path=./keyFiles/keys/ eth1 --chain-id=1337 --downstream-http-port=8545
+```
+
+### Menyiapkan Chainlens Blockchain explorer
+
+Chainlens menyediakan informasi menyeluruh dari jaringan privat blockchain yang dibuat, seperti informasi block, contract metadata, dan pencarian transaksi. Untuk mempermudah *information retrieval* pada proyek ini, Chainlens akan digunakan sebagai Blockchain explorer.
+
+> Note: Instal Docker dan Docker Compose terlebih dahulu
+
+Pada folder `docker-compose` pada `chainles`, jalankan perintah berikut.
+
+```shell
+NODE_ENDPOINT=http://host.docker.internal:8545 docker-compose up
+```
+
+Stop chainlens dengan perintah berikut.
+
+```shell
+docker-compose down
 ```
 
 ## Note

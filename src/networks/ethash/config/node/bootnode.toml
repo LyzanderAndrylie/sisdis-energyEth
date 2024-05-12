@@ -11,3 +11,4 @@ miner-coinbase="fe3b557e8fb62b89f4916b721be55ceb828dbd73"
 rpc-http-enabled=true
 host-allowlist=["*"]
 rpc-http-cors-origins=["all"]
+rpc-http-host="0.0.0.0"
