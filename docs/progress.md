@@ -93,13 +93,13 @@ Signing key configuration file akan digunakan oleh Web3Signer dalam proses *sign
 
 ```shell
 # generate a private key
-openssl ecparam -name secp256k1 -genkey -noout -out ec-secp256k1-private.pem
+openssl ecparam -name secp256k1 -genkey -noout -out ./keyFiles/ec-secp256k1-private.pem
 
 # extract the public key
-openssl ec -in ec-secp256k1-private.pem -pubout -out ec-secp256k1-public.pem
+openssl ec -in ./keyFiles/ec-secp256k1-private.pem -pubout -out ./keyFiles/ec-secp256k1-public.pem
 
 # hexadecimal encoded private key string.
-openssl ec -in ec-secp256k1-private.pem -text -noout
+openssl ec -in ./keyFiles/ec-secp256k1-private.pem -text -noout
 ```
 
 2. Membuat signing key configuration file dalam format yaml
@@ -144,16 +144,18 @@ Chainlens menyediakan informasi menyeluruh dari jaringan privat blockchain yang 
 
 > Note: Instal Docker dan Docker Compose terlebih dahulu
 
-Pada folder `docker-compose` pada `chainles`, jalankan perintah berikut.
+Pada folder `docker-compose` pada `chainlens`, jalankan perintah berikut.
 
 ```shell
-NODE_ENDPOINT=http://host.docker.internal:8545 docker-compose up
+NODE_ENDPOINT=http://host.docker.internal:8545 docker compose up -d
 ```
+
+Setelah selesai, buka browser dan akses `http://localhost/dashboard` untuk melihat Chainlens Blockchain explorer.
 
 Stop chainlens dengan perintah berikut.
 
 ```shell
-docker-compose down
+docker compose down
 ```
 
 ## Note
