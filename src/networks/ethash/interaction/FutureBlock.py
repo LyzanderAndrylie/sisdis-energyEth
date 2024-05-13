@@ -3,7 +3,7 @@ import json
 import time
 
 # Define the URL for the Web3 provider
-host = 'http://localhost:9000'  # Web3Signer URL
+host = 'http://127.0.0.1:9000'  # Web3Signer URL
 
 web3 = Web3(HTTPProvider(host))
 
