@@ -158,7 +158,7 @@ docker-compose down
 
 ### Simulasi LEM
 
-Simulasi LEM dapat dilakukan dengan menjalankan script python pada folder berikut : [`./src/networks/ethash/interaction`](./src/networks/ethash/interaction).
+Simulasi LEM dapat dilakukan dengan menjalankan script python pada folder berikut: [`/src/networks/ethash/interaction`](/src/networks/ethash/interaction).
 
 ## Note
 
