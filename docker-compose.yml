@@ -64,7 +64,7 @@ services:
       - "9000:9000"
     volumes:
       - ./keyFiles:/keyFiles
-    command: ["--key-store-path=/keyFiles/keys/", "eth1", "--chain-id=1337", "--downstream-http-port=8545"]
+    command: ["--key-store-path=/keyFiles/keys/", "eth1", "--chain-id=1337", "--downstream-http-port=8545", "--downstream-http-host=besu-node1"]
     depends_on:
       - besu-node1
       - besu-node2
