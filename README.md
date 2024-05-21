@@ -4,4 +4,4 @@ Repository TK Sistem Terdistribusi dengan topik Economic Feasibility of Consensu
 
 ## Dokumentasi Progress
 
-Dokumentasi terkait dengan progress yang telah dilakukan sepanjang TK ini dapat diakses pada dokumen markdown [`./docs/progress.md`](./docs/progress.md).
+Dokumentasi terkait tutorial untuk mengrekreasi hasil kejra kami dapat dilihat pada : [`./docs/progress.md`](./docs/progress.md).
