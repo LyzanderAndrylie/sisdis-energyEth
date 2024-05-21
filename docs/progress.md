@@ -44,6 +44,8 @@ besu --help
 besu --config-file=./src/networks/test/config/node/test.toml
 ```
 
+> **Note**: Ctrl+C untuk menghentikan node
+
 ![Node Test](/screenshot/node_test.png)
 
 ## Membuat jaringan privat dengan ethash (PoW)
@@ -56,12 +58,16 @@ Setiap perintah dijalankan pada node yang berbeda dengan working directory berup
   besu --config-file=./src/networks/ethash/config/node/bootnode.toml
   ```
 
+  > **Note**: Jalankan node ini pada terminal baru
+
 2. Jalankan 2 Node lainnya
 
   ```shell
   besu --config-file=./src/networks/ethash/config/node/node.toml --data-path=./src/networks/ethash/nodes/node-2/data --bootnodes=enode://6c2d168d2797090078406024ec1a9b726872046f6fa14ca7e0fbf448912a56fedd337c3908f2d9e66b98e7dc0f8024fcf41707d844dafbca530cbad4482a4edc@127.0.0.1:30303 --p2p-port=30304
   besu --config-file=./src/networks/ethash/config/node/node.toml --data-path=./src/networks/ethash/nodes/node-3/data --bootnodes=enode://6c2d168d2797090078406024ec1a9b726872046f6fa14ca7e0fbf448912a56fedd337c3908f2d9e66b98e7dc0f8024fcf41707d844dafbca530cbad4482a4edc@127.0.0.1:30303 --p2p-port=30305
   ```
+
+  > **Note**: Buat 2 terminal baru untuk menjalankan node ini
 
   > *Note*: Node-1 Enode URL dapat dilihat ketika menjalankan perintah `Jalankan bootnode`.
 
@@ -88,6 +94,8 @@ Download Web3Signer dari link: <https://docs.web3signer.consensys.io/get-started
 ### Membuat signing key configuration file
 
 Signing key configuration file akan digunakan oleh Web3Signer dalam proses *signing*. Pada proyek ini, private key akan disimpan di folder `keyFiles` dan raw unencrypted files akan digunakan sebagai signing key configuration file untuk mempermudah proses pengerjaan. Hal ini berarti private key yang dihasilkan tidak aman dan hanya digunakan untuk kebutuhan proyek ini saja!
+
+> **Note**: Anda tidak perlu untuk mengikuti step 1 dan step 2 dibawah karena sudah disediakan private key pada repositori ini, tahapan 1 dan 2 digunakan jika anda ingin membuat private key yang baru
 
 1. Membuat private key dengan format secp256k1.
 
