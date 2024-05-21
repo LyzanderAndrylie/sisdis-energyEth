@@ -156,6 +156,10 @@ Stop chainlens dengan perintah berikut.
 docker-compose down
 ```
 
+### Simulasi LEM
+
+Simulasi LEM dapat dilakukan dengan menjalankan script python pada folder berikut : [`./src/networks/ethash/interaction`](./src/networks/ethash/interaction).
+
 ## Note
 
 1. Don't forget about local blcok data and genesis configuration option when running besu.
