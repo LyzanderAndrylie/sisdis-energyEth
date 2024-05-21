@@ -12,11 +12,3 @@ rpc-http-enabled=true
 host-allowlist=["*"]
 rpc-http-cors-origins=["all"]
 rpc-http-host="0.0.0.0"
-
-# Metrics
-metrics-category=["BLOCKCHAIN","PEERS","PROCESS","ETHEREUM","EXECUTORS","JVM","NETWORK","PERMISSIONING","PRUNER","RPC","STRATUM","SYNCHRONIZER","TRANSACTION_POOL","KVSTORE_ROCKSDB","KVSTORE_PRIVATE_ROCKSDB","KVSTORE_ROCKSDB_STATS","KVSTORE_PRIVATE_ROCKSDB_STATS"]
-metrics-enabled=true
-metrics-host="127.0.0.1"
-metrics-port="9545"
-metrics-protocol="PROMETHEUS"
-metrics-push-enabled=false
