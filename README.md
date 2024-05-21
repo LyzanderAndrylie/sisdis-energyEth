@@ -2,6 +2,6 @@
 
 Repository TK Sistem Terdistribusi dengan topik Economic Feasibility of Consensus dari kode tesis [energyEth](https://github.com/fredrbl/energyEth)
 
-## Dokumentasi Progress
+## Dokumentasi
 
-Dokumentasi terkait tutorial untuk mengrekreasi hasil kejra kami dapat dilihat pada : [`./docs/progress.md`](./docs/progress.md).
+Dokumentasi terkait tutorial untuk mengrekreasi hasil kerja kami dapat dilihat pada : [`./docs/progress.md`](./docs/progress.md).
