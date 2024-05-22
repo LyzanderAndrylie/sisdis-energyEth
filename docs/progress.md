@@ -16,8 +16,8 @@ Dokumen ini berisi progress yang telah dilakukan sepanjang TK. Tujuan dokumen in
   - [Menyiapkan Web3Signer](#menyiapkan-web3signer)
     - [Membuat signing key configuration file](#membuat-signing-key-configuration-file)
     - [Utility](#utility)
-    - [Menyiapkan Chainlens Blockchain explorer](#menyiapkan-chainlens-blockchain-explorer)
   - [Menjalankan Prometheus dan Grafana](#menjalankan-prometheus-dan-grafana)
+    - [Menyiapkan Chainlens Blockchain explorer](#menyiapkan-chainlens-blockchain-explorer)
   - [Menjalankan Kode Interaksi](#menjalankan-kode-interaksi)
     - [FlexCoin](#flexcoin)
   - [Note](#note)
@@ -161,7 +161,7 @@ Sebelum menjalankan Prometheus, pastikan untuk menjalankan Node Exporter terlebi
 sudo docker compose up -d
 ```
 
-Perinta di atas akan menjalankan Node Exporter pada port 9100.
+Perintah di atas akan menjalankan Node Exporter pada port 9100.
 ![Node Exporter](/screenshot/node-exporter.png)
 
 Ketika Prometheus sudah terinstall pastikan untuk menjalankan Prometheus dengan menggunakan konfigurasi `prometheus.yml` yang ada pada folder `prometheus`.
@@ -173,7 +173,7 @@ Anda bisa mengakses Prometheus pada port 9090.
 
 Kemudian untuk grafana, Anda langsung bisa menjalankan grafana jika mengikuti panduan instalasi yang ada pada link di atas. Setelah itu, Anda bisa mengakses Grafana pada port 3000. Namun, sebelum itu, Anda perlu mengkonfigurasi Prometheus sebagai data source pada Grafana (walaupun hal ini sebenarnya bisa dilakukan setelah Anda mengakses Grafana).
 ```shell
-sudo cp ~/sisdis-tk/grafana/provisioning/datasources/datasource.yml /etc/grafana/provisioning/datasources/
+sudo cp ./grafana/provisioning/datasources/datasource.yml /etc/grafana/provisioning/datasources/
 ```
 Setelah itu, restart Grafana.
 ```shell
