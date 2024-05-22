@@ -56,10 +56,10 @@ else:
         'nonce': web3.eth.get_transaction_count(account),
     })
     web3.eth.wait_for_transaction_receipt(tx_hash)
-    
+
     # Flexcoin balance after transfer
     flexcoin_balance_1 = FlexCoin.functions.getHouse(account_1).call()
     flexcoin_balance_2 = FlexCoin.functions.getHouse(account_2).call()
-    
+
     print(f'House 1 - FlexCoin: {flexcoin_balance_1}')
     print(f'House 2 - FlexCoin: {flexcoin_balance_2}')

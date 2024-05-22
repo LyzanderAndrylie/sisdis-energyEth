@@ -25,7 +25,7 @@ abiFlexCoin = valuesFlexCoin['abi']
 addressFlexCoin = input("What is the contract address? - FlexCoin: ")
 FlexCoin = web3.eth.contract(address=addressFlexCoin, abi=abiFlexCoin)
 
-def wait_for_receipt(tx_hash, timeout=120):
+def wait_for_receipt(tx_hash, timeout=600):
     start_time = time.time()
     while True:
         try:

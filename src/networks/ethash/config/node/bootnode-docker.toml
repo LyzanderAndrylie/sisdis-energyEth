@@ -1,7 +1,7 @@
-data-path="./src/networks/ethash/nodes/node-1/data"
+data-path = "/data"
 
 # Chain
-genesis-file="./src/networks/ethash/config/network/genesis.json"
+genesis-file = "/tmp/config/genesis.json"
 
 # Mining
 miner-enabled=true
