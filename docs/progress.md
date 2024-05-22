@@ -149,7 +149,7 @@ Untuk membuat private key sebanyak n dan menyimpannya pada signing key configura
 web3signer --key-store-path=./keyFiles/keys/ eth1 --chain-id=1337 --downstream-http-port=8545
 ```
 
-### Menyiapkan Prometheus dan Grafana
+## Menjalankan Prometheus dan Grafana
 
 - Link Instalasi [Prometheus](https://prometheus.io/docs/prometheus/latest/installation/)
 - Link Instalasi [Grafana](https://grafana.com/docs/grafana/latest/installation/)
@@ -219,19 +219,7 @@ Stop chainlens dengan perintah berikut.
 docker compose down
 ```
 
-## Menjalankan Prometheus dan Grafana
 
-Untuk menjalankan Prometheus dan Grafana, ubah working directory ke folder `prometheus-grafana`. Kemudian, jalankan perintah berikut.
-
-```shell
-```
-
-Kemudian, untuk mengakses Grafana, kita dapat mengakses <http://localhost:3000/login> dan mengisi kredensial sebagai berikut.
-
-```txt
-username: admin
-password: admin
-```
 
 ## Menjalankan Kode Interaksi
 
