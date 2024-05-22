@@ -12,9 +12,9 @@ scrape_configs:
     scheme: http
     static_configs:
       - targets:
-          - besu-bootnode:9545
-          - besu-node1:9546
-          - besu-node2:9547
+          - localhost:9545
+          - localhost:9546
+          - localhost:9547
   - job_name: "node-exporter"
     static_configs:
       - targets: ["node-exporter:9100"]
