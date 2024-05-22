@@ -149,6 +149,56 @@ Untuk membuat private key sebanyak n dan menyimpannya pada signing key configura
 web3signer --key-store-path=./keyFiles/keys/ eth1 --chain-id=1337 --downstream-http-port=8545
 ```
 
+### Menyiapkan Prometheus dan Grafana
+
+- Link Instalasi [Prometheus](https://prometheus.io/docs/prometheus/latest/installation/)
+- Link Instalasi [Grafana](https://grafana.com/docs/grafana/latest/installation/)
+- Link Instalasi [Node Exporter](https://prometheus.io/docs/guides/node-exporter/)
+
+Sebelum menjalankan Prometheus, pastikan untuk menjalankan Node Exporter terlebih dahulu. Anda bisa masuk ke folder `node_exporter` dan menjalankan perintah berikut.
+
+```shell
+sudo docker compose up -d
+```
+
+Perinta di atas akan menjalankan Node Exporter pada port 9100.
+![Node Exporter](/screenshot/node-exporter.png)
+
+Ketika Prometheus sudah terinstall pastikan untuk menjalankan Prometheus dengan menggunakan konfigurasi `prometheus.yml` yang ada pada folder `prometheus`.
+```shell
+prometheus --config.file=prometheus/prometheus.yml 
+```
+Anda bisa mengakses Prometheus pada port 9090.
+![Prometheus](/screenshot/prometheus.png)
+
+Kemudian untuk grafana, Anda langsung bisa menjalankan grafana jika mengikuti panduan instalasi yang ada pada link di atas. Setelah itu, Anda bisa mengakses Grafana pada port 3000. Namun, sebelum itu, Anda perlu mengkonfigurasi Prometheus sebagai data source pada Grafana (walaupun hal ini sebenarnya bisa dilakukan setelah Anda mengakses Grafana).
+```shell
+sudo cp ~/sisdis-tk/grafana/provisioning/datasources/datasource.yml /etc/grafana/provisioning/datasources/
+```
+Setelah itu, restart Grafana.
+```shell
+sudo systemctl restart grafana-server
+```
+Anda bisa mengakses Grafana pada port 3000.
+![Grafana](/screenshot/grafana.png)
+
+Kredensial default Grafana adalah sebagai berikut.
+```txt
+username: admin
+password: admin
+```
+
+Kemudian pada halaman utama Grafana, Anda bisa menambahkan data source dengan memilih Prometheus (jika belum Anda konfigurasi sebelumnya). Isi URL dengan `http://localhost:9090` dan klik `Save & Test`.
+
+Untuk mengakses dashboard yang sudah disediakan, Anda bisa mengakses [Grafana Dashboard](https://grafana.com/grafana/dashboards) dan mencari dashboard yang sesuai dengan kebutuhan Anda. Dalam konteks ini, kami menyarankan:
+- [Node Exporter Full](https://grafana.com/grafana/dashboards/1860)
+- [Besu Overview](https://grafana.com/grafana/dashboards/10273-besu-overview/)
+- [Besu Full](https://grafana.com/grafana/dashboards/16455-besu-full/)
+
+Anda bisa mengimpor dashboard pada link <ip_address>:3000/dashboard/import dengan menggunakan ID dashboard ataupun dengan mengimpor file JSON yang sudah Anda download.
+
+
+
 ### Menyiapkan Chainlens Blockchain explorer
 
 Chainlens menyediakan informasi menyeluruh dari jaringan privat blockchain yang dibuat, seperti informasi block, contract metadata, dan pencarian transaksi. Untuk mempermudah *information retrieval* pada proyek ini, Chainlens akan digunakan sebagai Blockchain explorer.
