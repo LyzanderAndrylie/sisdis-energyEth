@@ -17,6 +17,7 @@ Dokumen ini berisi progress yang telah dilakukan sepanjang TK. Tujuan dokumen in
     - [Membuat signing key configuration file](#membuat-signing-key-configuration-file)
     - [Utility](#utility)
   - [Menjalankan Prometheus dan Grafana](#menjalankan-prometheus-dan-grafana)
+    - [Konfigurasi Metric Query PromQL untuk Prometheus](#konfigurasi-metric-query-promql-untuk-prometheus)
     - [Menyiapkan Chainlens Blockchain explorer](#menyiapkan-chainlens-blockchain-explorer)
   - [Menjalankan Kode Interaksi](#menjalankan-kode-interaksi)
     - [FlexCoin](#flexcoin)
@@ -206,7 +207,31 @@ Untuk mengakses dashboard yang sudah disediakan, Anda bisa mengakses [Grafana Da
 
 Anda bisa mengimpor dashboard pada link <ip_address>:3000/dashboard/import dengan menggunakan ID dashboard ataupun dengan mengimpor file JSON yang sudah Anda download.
 
+### Konfigurasi Metric Query PromQL untuk Prometheus
 
+1. CPU Usage: persentase total user and system CPU time per detik untuk 5 menit terakhir.
+
+  ```promql
+  sum(rate(process_cpu_seconds_total{job="besu"}[5m])) by (instance) * 100
+  ```
+
+2. Memory Usage: persentase memori yang digunakan relatif dengan virtual memory yang dialokasikan.
+
+  ```promql
+  process_resident_memory_bytes{job="besu"} / process_virtual_memory_bytes{job="besu"} * 100
+  ```
+
+3. Transaction count: jumlah transaksi yang dilakukan pada 5 menit terakhir.
+
+  ```promql
+  sum(rate(besu_blockchain_chain_head_transaction_count{job="besu"}[5m]))
+  ```
+
+4. Gas Used: Gas yang digunakan pada suatu transaksi.
+
+  ```promql
+  besu_blockchain_chain_head_gas_used
+  ```
 
 ### Menyiapkan Chainlens Blockchain explorer
 
@@ -227,8 +252,6 @@ Stop chainlens dengan perintah berikut.
 ```shell
 docker compose down
 ```
-
-
 
 ## Menjalankan Kode Interaksi
 
