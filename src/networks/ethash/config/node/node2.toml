@@ -1,0 +1,11 @@
+
+# Chain
+genesis-file="./src/networks/ethash/config/network/genesis.json"
+
+# Metrics
+metrics-category=["BLOCKCHAIN","PEERS","PROCESS","ETHEREUM","EXECUTORS","JVM","NETWORK","PERMISSIONING","PRUNER","RPC","STRATUM","SYNCHRONIZER","TRANSACTION_POOL","KVSTORE_ROCKSDB","KVSTORE_PRIVATE_ROCKSDB","KVSTORE_ROCKSDB_STATS","KVSTORE_PRIVATE_ROCKSDB_STATS"]
+metrics-enabled=true
+metrics-host="0.0.0.0"
+metrics-port="9547"
+metrics-protocol="PROMETHEUS"
+metrics-push-enabled=false

@@ -1,14 +1,23 @@
-data-path="./src/networks/ethash/nodes/node-1/data" 
+data-path="./src/networks/ethash/nodes/node-1/data"
 
 # Chain
-genesis-file="./src/networks/ethash/config/network/genesis.json" 
+genesis-file="./src/networks/ethash/config/network/genesis.json"
 
 # Mining
-miner-enabled=true 
-miner-coinbase="fe3b557e8fb62b89f4916b721be55ceb828dbd73" 
+miner-enabled=true
+miner-coinbase="fe3b557e8fb62b89f4916b721be55ceb828dbd73"
 
 # Network
 rpc-http-enabled=true
 host-allowlist=["*"]
 rpc-http-cors-origins=["all"]
 rpc-http-host="0.0.0.0"
+p2p-port=30303
+
+# Metrics
+metrics-category=["BLOCKCHAIN","PEERS","PROCESS","ETHEREUM","EXECUTORS","JVM","NETWORK","PERMISSIONING","PRUNER","RPC","STRATUM","SYNCHRONIZER","TRANSACTION_POOL","KVSTORE_ROCKSDB","KVSTORE_PRIVATE_ROCKSDB","KVSTORE_ROCKSDB_STATS","KVSTORE_PRIVATE_ROCKSDB_STATS"]
+metrics-enabled=true
+metrics-host="0.0.0.0"
+metrics-port="9545"
+metrics-protocol="PROMETHEUS"
+metrics-push-enabled=false

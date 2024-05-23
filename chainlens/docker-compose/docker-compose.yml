@@ -1,4 +1,3 @@
-version: "3.6"
 services:
   api:
     image: web3labs/epirus-free-api:latest

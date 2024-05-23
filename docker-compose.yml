@@ -1,0 +1,216 @@
+networks:
+  besu-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.25.0.0/16
+          gateway: 172.25.0.1
+
+services:
+  besu-bootnode:
+    build: .
+    container_name: besu-bootnode
+    privileged: true
+    networks:
+      besu-network:
+        ipv4_address: 172.25.0.10
+    volumes:
+      - ./src/networks/ethash/nodes/node-1/data:/data
+      - ./src/networks/ethash/config/node:/config
+    ports:
+      - "30303:30303"
+      - "8545:8545"
+    user: "1000:1000"
+    command: ["--config-file=/config/bootnode-docker.toml"]
+
+  besu-node1:
+    build: .
+    container_name: besu-node1
+    privileged: true
+    networks:
+      besu-network:
+        ipv4_address: 172.25.0.11
+    volumes:
+      - ./src/networks/ethash/nodes/node-2/data:/data
+      - ./src/networks/ethash/config/node:/config
+    ports:
+      - "30304:30304"
+      - "8546:8545"
+      - "9546:9546"
+    depends_on:
+      - besu-bootnode
+    user: "1000:1000"
+    command: ["--config-file=/config/node1-docker.toml", "--data-path=/data", "--bootnodes=enode://e80baa528e12a01d2e043768f354c22f42ea39c4cb17bded94e308f37f6d374fae6116794395a9d697ee9ebed51cc719542d9dbe9557f81fd8f5247dcc078a60@172.25.0.10:30303", "--p2p-port=30304"]
+
+  besu-node2:
+    build: .
+    container_name: besu-node2
+    privileged: true
+    networks:
+      besu-network:
+        ipv4_address: 172.25.0.12
+    volumes:
+      - ./src/networks/ethash/nodes/node-3/data:/data
+      - ./src/networks/ethash/config/node:/config
+    ports:
+      - "30305:30305"
+      - "8547:8545"
+      - "9547:9547"
+    depends_on:
+      - besu-bootnode
+    user: "1000:1000"
+    command: ["--config-file=/config/node2-docker.toml", "--data-path=/data", "--bootnodes=enode://e80baa528e12a01d2e043768f354c22f42ea39c4cb17bded94e308f37f6d374fae6116794395a9d697ee9ebed51cc719542d9dbe9557f81fd8f5247dcc078a60@172.25.0.10:30303", "--p2p-port=30305"]
+
+  web3signer:
+    image: consensys/web3signer:latest
+    privileged: true
+    container_name: web3signer
+    networks:
+      - besu-network
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./keyFiles:/keyFiles
+    command: ["--key-store-path=/keyFiles/keys/", "eth1", "--chain-id=1337", "--downstream-http-port=8545", "--downstream-http-host=besu-node1"]
+    depends_on:
+      - besu-node1
+      - besu-node2
+
+  prometheus:
+    image: prom/prometheus:latest
+    privileged: true
+    container_name: prometheus
+    networks:
+      - besu-network
+    ports:
+      - "9090:9090"
+    volumes:
+      - prometheus_data:/etc/prometheus
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+      - "besu-bootnode:172.25.0.10"
+      - "besu-node1:172.25.0.11"
+      - "besu-node2:172.25.0.12"
+
+  grafana:
+    image: grafana/grafana:latest
+    privileged: true
+    container_name: grafana
+    networks:
+      - besu-network
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+    ports:
+      - "3000:3000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+      - "besu-bootnode:172.25.0.10"
+      - "besu-node1:172.25.0.11"
+      - "besu-node2:172.25.0.12"
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    privileged: true
+    container_name: node-exporter
+    networks:
+      - besu-network
+    ports:
+      - "9100:9100"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  api:
+    image: web3labs/epirus-free-api:latest
+    privileged: true
+    environment:
+      - NODE_ENDPOINT=http://besu-node1:8545
+      - MONGO_CLIENT_URI=mongodb://mongodb:27017
+      - REINDEX_ENDPOINT=http://ingestion/reindex/
+      - MONGO_DB_NAME=epirus
+      - MONGO_CREATE_INDICES=true
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+      - mongodb
+    networks:
+      - besu-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  mongodb:
+    image: mongo:4
+    privileged: true
+    environment:
+      - COMPOSE_HTTP_TIMEOUT=900
+      - DOCKER_CLIENT_TIMEOUT=900
+    entrypoint: mongod --bind_ip "0.0.0.0"
+    networks:
+      - besu-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  redis:
+    image: redis
+    privileged: true
+    restart: unless-stopped
+    container_name: redis
+    networks:
+      - besu-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  web:
+    image: web3labs/epirus-free-web:latest
+    privileged: true
+    environment:
+      - API_URL=/api
+      - WS_API_URL=ws://localhost:8090
+      - DISPLAY_NETWORK_TAB=disabled
+    depends_on:
+      - api
+    networks:
+      - besu-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  ingestion:
+    image: web3labs/epirus-free-ingestion:latest
+    privileged: true
+    environment:
+      - NODE_ENDPOINT=http://besu-node1:8545
+      - MONGO_CLIENT_URI=mongodb://mongodb:27017
+      - MONGO_DB_NAME=epirus
+      - LIST_OF_METRICS_TO_CALCULATE_PER_MINUTE=hourly,daily,monthly,yearly
+    depends_on:
+      - mongodb
+      - redis
+    networks:
+      - besu-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  nginx:
+    image: nginx:latest
+    privileged: true
+    volumes:
+      - ./chainlens/nginx.conf:/etc/nginx/nginx.conf
+      - ./chainlens/5xx.html:/www/error_pages/5xx.html
+    ports:
+      - "8800:8800"
+    depends_on:
+      - api
+      - web
+    networks:
+      - besu-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  grafana_data:
+  prometheus_data:
