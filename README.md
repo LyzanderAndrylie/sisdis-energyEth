@@ -19,8 +19,10 @@ Repository TK Sistem Terdistribusi dengan topik Economic Feasibility of Consensu
 - `/prometheus` berisi konfigurasi prometheus yang diperlukan.
 - `/screenshot` berisi tangkapan layar dari pengerjaan proyek ini.
 - `/src` berisi konfigurasi jaringan ethash dengan Hyperledger Besu.
-  - `/config/node/` file konfigurasi untuk tingkat node.
-  - `/config/network/` file konfigurasi untuk tingkat jaringan (file genesis).
+  - `/src/networks/ethash/config/node` file konfigurasi untuk tingkat node.
+  - `/src/networks/ethash/config/network` file konfigurasi untuk tingkat jaringan (file genesis).
+  - `/src/networks/ethash/interaction` berisi kode python untuk berinterkasi dengan *smart contract* yang telah di-*deploy*.
+  - `/src/networks/ethash/nodes` berisi local block data untuk setiap *nodes* yang berpartisipasi dalam jaringan blockchain ethash.
 - `package.json` berisi dependensi JavaScript (Node).
 - `Pipfile` berisi dependensi Python.
 - `truffle-config.js` berisi konfigrausi Truffle.
