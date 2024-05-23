@@ -20,7 +20,8 @@ Dokumen ini berisi progress yang telah dilakukan sepanjang TK. Tujuan dokumen in
     - [Menyiapkan Chainlens Blockchain explorer](#menyiapkan-chainlens-blockchain-explorer)
   - [Menjalankan Kode Interaksi](#menjalankan-kode-interaksi)
     - [FlexCoin](#flexcoin)
-  - [Note](#note)
+    - [Mekanisme Trading](#mekanisme-trading)
+    - [Simulasi LEM](#simulasi-lem)
 
 ## Mempersiapkan Kebutuhan Sistem
 
@@ -252,7 +253,7 @@ python3 <path_ke_FlexCoin.py>
 Kemudian, kita akan diminta untuk mengisi contract address dari *smart contract* FlexCoin melalui prompt terminal. Contract address dari *smart contract* FlexCoin dapat diakses pada file `FlexCoin.json` pada folder `build/contracts`. Berikut adalah contoh dari contract address *smart contract* FlexCoin.
 
 ```json
-networks": {
+"networks": {
     "1337": {
       "events": {},
       "links": {},
@@ -297,7 +298,7 @@ House made for node:  9
 Transaction Hash: 0x5ab2b7866aa12477a4f321b8ba67ae6aef4c5fc42758d36a6204fdca2174014e
 ```
 
-Jika kita menjalankan kode FlexCoin.py untuk kedua kalinya, akan dijalankan uji coba transaksi FlexCoin dengan output sebagai berikut.
+Jika kita menjalankan kode FlexCoinExample.py, kode tersebut akan menjalankan uji coba transaksi FlexCoin dengan output sebagai berikut.
 
 ```txt
 Number of houses: 10
@@ -329,18 +330,18 @@ House 1 - FlexCoin: ['0x23b7A96F30309eabd68d741C0FeA7802F7Bdd1b5', 199999999999]
 House 2 - FlexCoin: ['0x279842E43ce3036f1E5A9953cF6839e46c78dD05', 200000000001]
 ```
 
+### Mekanisme Trading
+
+Untuk menjalankan interaksi untuk masing-masing mekanisme perdagangan, kita cukup mengeksekusi kode yang sesuai pada folder `src/networks/ethash/interaction`.
+
+```shell
+python3 src/networks/ethash/interaction/Duration.py
+python3 src/networks/ethash/interaction/DurationSecure.py
+python3 src/networks/ethash/interaction/RealTime.py
+python3 src/networks/ethash/interaction/FutureBlock.py
+```
+
 ### Simulasi LEM
 
 Simulasi LEM dapat dilakukan dengan menjalankan script python pada folder berikut: [`/src/networks/ethash/interaction`](/src/networks/ethash/interaction).
 
-## Note
-
-1. Don't forget about local blcok data and genesis configuration option when running besu.
-
-  Ref: <https://besu.hyperledger.org/private-networks/get-started/start-node>
-
-2. Configuration
-
-- `/config/node/` configuration file is used for node-level settings.
-
-- `/config/network/` configuration file is used for network-wide settings (genesis file).
