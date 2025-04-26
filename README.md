@@ -1,33 +1,33 @@
-# TK Sistem Terdistribusi 2023/2024: EnergyEth
+# TK Distributed Systems 2023/2024: EnergyEth
 
-Repository TK Sistem Terdistribusi dengan topik Economic Feasibility of Consensus dari kode tesis [energyEth](https://github.com/fredrbl/energyEth)
+Repository for the Distributed Systems coursework project on the topic of Economic Feasibility of Consensus based on the thesis code [energyEth](https://github.com/fredrbl/energyEth)
 
-- [TK Sistem Terdistribusi 2023/2024: EnergyEth](#tk-sistem-terdistribusi-20232024-energyeth)
-  - [Struktur Folder](#struktur-folder)
-  - [Dokumentasi](#dokumentasi)
+- [TK Distributed Systems 2023/2024: EnergyEth](#tk-distributed-systems-20232024-energyeth)
+  - [Folder Structure](#folder-structure)
+  - [Documentation](#documentation)
 
-## Struktur Folder
+## Folder Structure
 
-- `/build` berisi *smart contract* yang telah di-*compile* dengan menggunakan Truffle
-- `/chainlens` berisi `compose.yaml` untuk menjalankan Chainlens Blockchain Explorer
-- `/contracts` berisi *smart contract* energyEth.
-- `/docs` berisi dokumentasi pengerjaan proyek ini.
-- `/grafana` berisi konfigurasi grafana yang diperlukan.
-- `/keyFiles` berisi konfigurasi accounts (public key dan private key) yang dikelola oleh Web3Signer.
-- `/migrations` berisi kode untuk melakukan deployment *smart contract* oleh Truffle ke Hyperledger Besu.
-- `/node-exporter` berisi `compose.yml` untuk menjalankan `node-exporter` untuk Prometheus.
-- `/prometheus` berisi konfigurasi prometheus yang diperlukan.
-- `/screenshot` berisi tangkapan layar dari pengerjaan proyek ini.
-- `/src` berisi konfigurasi jaringan ethash dengan Hyperledger Besu.
-  - `/src/networks/ethash/config/node` file konfigurasi untuk tingkat node.
-  - `/src/networks/ethash/config/network` file konfigurasi untuk tingkat jaringan (file genesis).
-  - `/src/networks/ethash/interaction` berisi kode python untuk berinterkasi dengan *smart contract* yang telah di-*deploy*.
-  - `/src/networks/ethash/nodes` berisi local block data untuk setiap *nodes* yang berpartisipasi dalam jaringan blockchain ethash.
-- `package.json` berisi dependensi JavaScript (Node).
-- `Pipfile` berisi dependensi Python.
-- `truffle-config.js` berisi konfigrausi Truffle.
-- `utils.sh` berisi script bash untuk mempermudah menjalankan jaringan blockchain.
+- `/build` contains the compiled *smart contracts* using Truffle
+- `/chainlens` contains the `compose.yaml` to run Chainlens Blockchain Explorer
+- `/contracts` contains the energyEth *smart contracts*
+- `/docs` contains the project documentation
+- `/grafana` contains the necessary Grafana configurations
+- `/keyFiles` contains account configurations (public and private keys) managed by Web3Signer
+- `/migrations` contains the code to deploy *smart contracts* to Hyperledger Besu using Truffle
+- `/node-exporter` contains `compose.yml` to run `node-exporter` for Prometheus
+- `/prometheus` contains the necessary Prometheus configurations
+- `/screenshot` contains screenshots of the project work
+- `/src` contains the ethash network configuration using Hyperledger Besu
+  - `/src/networks/ethash/config/node` contains node-level configuration files
+  - `/src/networks/ethash/config/network` contains network-level configuration files (genesis file)
+  - `/src/networks/ethash/interaction` contains Python code to interact with the deployed *smart contracts*
+  - `/src/networks/ethash/nodes` contains local block data for each *node* participating in the ethash blockchain network
+- `package.json` contains JavaScript (Node.js) dependencies
+- `Pipfile` contains Python dependencies
+- `truffle-config.js` contains the Truffle configuration
+- `utils.sh` contains bash scripts to simplify blockchain network operations
 
-## Dokumentasi
+## Documentation
 
-Dokumentasi terkait tutorial untuk mengrekreasi hasil kerja kami dapat dilihat pada : [`./docs/progress.md`](./docs/progress.md).
+Tutorials and documentation for recreating our project work can be found at: [`./docs/progress.md`](./docs/progress.md).
