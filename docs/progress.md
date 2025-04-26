@@ -1,48 +1,48 @@
-# Dokumen Progress TK Sistem Terdistribusi 2023/2024: EnergyEth
+# Progress Document for Distributed Systems Project 2023/2024: EnergyEth
 
-Dokumen ini berisi progress yang telah dilakukan sepanjang TK. Tujuan dokumen ini dibuat untuk menampilkan hal-hal apa saja yang telah dilakukan sampai proyek TK ini selesai bagi tim.
+This document contains the progress made throughout the project. The purpose of this document is to showcase the tasks completed until the project is finalized.
 
-## Daftar Konten
+## Table of Contents
 
-- [Dokumen Progress TK Sistem Terdistribusi 2023/2024: EnergyEth](#dokumen-progress-tk-sistem-terdistribusi-20232024-energyeth)
-  - [Daftar Konten](#daftar-konten)
-  - [Mempersiapkan Kebutuhan Sistem](#mempersiapkan-kebutuhan-sistem)
+- [Progress Document for Distributed Systems Project 2023/2024: EnergyEth](#progress-document-for-distributed-systems-project-20232024-energyeth)
+  - [Table of Contents](#table-of-contents)
+  - [Preparing System Requirements](#preparing-system-requirements)
     - [VirtualBox](#virtualbox)
-    - [Lainnya](#lainnya)
-  - [Mengunduh Hyperledger Besu](#mengunduh-hyperledger-besu)
-  - [Menjalankan sebuah node untuk testing](#menjalankan-sebuah-node-untuk-testing)
-  - [Membuat jaringan privat dengan ethash (PoW)](#membuat-jaringan-privat-dengan-ethash-pow)
-  - [Mendeploy smart contract ke ethash](#mendeploy-smart-contract-ke-ethash)
-  - [Menyiapkan Web3Signer](#menyiapkan-web3signer)
-    - [Membuat signing key configuration file](#membuat-signing-key-configuration-file)
+    - [Others](#others)
+  - [Downloading Hyperledger Besu](#downloading-hyperledger-besu)
+  - [Running a Node for Testing](#running-a-node-for-testing)
+  - [Creating a Private Network with Ethash (PoW)](#creating-a-private-network-with-ethash-pow)
+  - [Deploying Smart Contracts to Ethash](#deploying-smart-contracts-to-ethash)
+  - [Setting Up Web3Signer](#setting-up-web3signer)
+    - [Creating a Signing Key Configuration File](#creating-a-signing-key-configuration-file)
     - [Utility](#utility)
-  - [Menjalankan Prometheus dan Grafana](#menjalankan-prometheus-dan-grafana)
-    - [Konfigurasi Metric Query PromQL untuk Prometheus](#konfigurasi-metric-query-promql-untuk-prometheus)
-    - [Menyiapkan Chainlens Blockchain explorer](#menyiapkan-chainlens-blockchain-explorer)
-  - [Menjalankan Kode Interaksi](#menjalankan-kode-interaksi)
+  - [Running Prometheus and Grafana](#running-prometheus-and-grafana)
+    - [PromQL Metric Query Configuration for Prometheus](#promql-metric-query-configuration-for-prometheus)
+    - [Setting Up Chainlens Blockchain Explorer](#setting-up-chainlens-blockchain-explorer)
+  - [Running Interaction Code](#running-interaction-code)
     - [FlexCoin](#flexcoin)
-    - [Mekanisme Trading](#mekanisme-trading)
-    - [Simulasi LEM](#simulasi-lem)
+    - [Trading Mechanisms](#trading-mechanisms)
+    - [LEM Simulation](#lem-simulation)
 
-## Mempersiapkan Kebutuhan Sistem
+## Preparing System Requirements
 
 ### VirtualBox
 
-Untuk menjalankan [Hyperledger Besu](https://besu.hyperledger.org/) dengan jaringan privat, kita memerlukan sistem operasi Linux dengan ketentuan yang dapat diakses pada link <https://besu.hyperledger.org/private-networks/get-started/system-requirements>.
+To run [Hyperledger Besu](https://besu.hyperledger.org/) with a private network, we need a Linux operating system that meets the requirements listed at <https://besu.hyperledger.org/private-networks/get-started/system-requirements>.
 
-Untuk menjalankan Ubuntu Desktop pada VM dengan VirtualBox, kita dapat mengakses panduan pada link <https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview>.  
+To run Ubuntu Desktop on a VM using VirtualBox, refer to the guide at <https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview>.  
 
-> Note: Jika kalian ingin mempersiapkan Ubuntu pada VirtualBox, pastikan versi yang kompatibel. Saat ini, VirtualBox 7.0.12 berjalan dengan baik dengan Ubuntu 22.04
+> Note: If you plan to set up Ubuntu on VirtualBox, ensure compatibility. Currently, VirtualBox 7.0.12 works well with Ubuntu 22.04.
 
-### Lainnya
+### Others
 
-Kita juga bisa menggunakan WSL2, Docker, ataupun *dual-booting* untuk menjalankan Hyperledger Besu. Pilih opsi yang memudahkan kalian untuk menjalankan kode yang ada.
+You can also use WSL2, Docker, or dual-booting to run Hyperledger Besu. Choose the option that best suits your needs.
 
-## Mengunduh Hyperledger Besu
+## Downloading Hyperledger Besu
 
-Versi: 24.3.3
+Version: 24.3.3
 
-Link:
+Links:
 
 1. <https://github.com/hyperledger/besu/releases/tag/24.3.3>
 2. <https://yehiatarek67.medium.com/install-hyperledger-besu-on-linux-for-beginners-a5a67d1f54c7>
@@ -51,66 +51,66 @@ Link:
 besu --help
 ```
 
-## Menjalankan sebuah node untuk testing
+## Running a Node for Testing
 
 ```shell
 besu --config-file=./src/networks/test/config/node/test.toml
 ```
 
-> **Note**: Ctrl+C untuk menghentikan node
+> **Note**: Press Ctrl+C to stop the node.
 
 ![Node Test](/screenshot/node_test.png)
 
-## Membuat jaringan privat dengan ethash (PoW)
+## Creating a Private Network with Ethash (PoW)
 
-Setiap perintah dijalankan pada node yang berbeda dengan working directory berupa `/ethash`.
+Each command is executed on a different node with the working directory set to `/ethash`.
 
-1. Jalankan bootnode
+1. Start the bootnode:
 
   ```shell
   besu --config-file=./src/networks/ethash/config/node/bootnode.toml
   ```
 
-  > **Note**: Jalankan node ini pada terminal baru
+  > **Note**: Run this node in a new terminal.
 
-2. Jalankan 2 Node lainnya
+2. Start 2 additional nodes:
 
   ```shell
   besu --config-file=./src/networks/ethash/config/node/node1.toml --data-path=./src/networks/ethash/nodes/node-2/data --bootnodes=enode://6c2d168d2797090078406024ec1a9b726872046f6fa14ca7e0fbf448912a56fedd337c3908f2d9e66b98e7dc0f8024fcf41707d844dafbca530cbad4482a4edc@127.0.0.1:30303 --p2p-port=30304
   besu --config-file=./src/networks/ethash/config/node/node2.toml --data-path=./src/networks/ethash/nodes/node-3/data --bootnodes=enode://6c2d168d2797090078406024ec1a9b726872046f6fa14ca7e0fbf448912a56fedd337c3908f2d9e66b98e7dc0f8024fcf41707d844dafbca530cbad4482a4edc@127.0.0.1:30303 --p2p-port=30305
   ```
 
-  > **Note**: Buat 2 terminal baru untuk menjalankan node ini
+  > **Note**: Open 2 new terminals to run these nodes.
 
-  > *Note*: Node-1 Enode URL dapat dilihat ketika menjalankan perintah `Jalankan bootnode`.
+  > *Note*: The Enode URL for Node-1 can be viewed when running the `Start the bootnode` command.
 
-## Mendeploy smart contract ke ethash
+## Deploying Smart Contracts to Ethash
 
-untuk mendeploy, kita memerlukan hal berikut.
+To deploy, the following are required:
 
-1. Node package manager (npm)
+1. Node Package Manager (npm)
 2. <https://www.npmjs.com/package/web3>
-3. Truffle diinstal secara global
+3. Truffle installed globally
 
-> **Note**: Setelah kalian mengunduh npm, jalankan perintah `npm i` untuk mengunduh packages yang dibutuhkan.
+> **Note**: After downloading npm, run the command `npm i` to download the required packages.
 
-Jalankan perintah berikut untuk men-compile dan men-deploy smart contract:
+Run the following command to compile and deploy the smart contract:
 
 ```shell
 truffle migrate --network besu
 ```
 
-## Menyiapkan Web3Signer
+## Setting Up Web3Signer
 
-Download Web3Signer dari link: <https://docs.web3signer.consensys.io/get-started/install-binaries>
+Download Web3Signer from the link: <https://docs.web3signer.consensys.io/get-started/install-binaries>
 
-### Membuat signing key configuration file
+### Creating a Signing Key Configuration File
 
-Signing key configuration file akan digunakan oleh Web3Signer dalam proses *signing*. Pada proyek ini, private key akan disimpan di folder `keyFiles` dan raw unencrypted files akan digunakan sebagai signing key configuration file untuk mempermudah proses pengerjaan. Hal ini berarti private key yang dihasilkan tidak aman dan hanya digunakan untuk kebutuhan proyek ini saja!
+The signing key configuration file will be used by Web3Signer during the signing process. In this project, private keys will be stored in the `keyFiles` folder, and raw unencrypted files will be used as the signing key configuration file for simplicity. This means the generated private keys are not secure and are only used for this project!
 
-> **Note**: Anda tidak perlu untuk mengikuti step 1 dan step 2 dibawah karena sudah disediakan private key pada repositori ini, tahapan 1 dan 2 digunakan jika anda ingin membuat private key yang baru
+> **Note**: You do not need to follow steps 1 and 2 below as private keys are already provided in this repository. These steps are for creating new private keys if needed.
 
-1. Membuat private key dengan format secp256k1.
+1. Generate a private key in the secp256k1 format.
 
 ```shell
 # generate a private key
@@ -123,29 +123,29 @@ openssl ec -in ./keyFiles/ec-secp256k1-private.pem -pubout -out ./keyFiles/ec-se
 openssl ec -in ./keyFiles/ec-secp256k1-private.pem -text -noout
 ```
 
-2. Membuat signing key configuration file dalam format yaml
+2. Create a signing key configuration file in YAML format.
 
-```shell
+```yaml
 type: "file-raw"
 keyType: "SECP256K1"
 privateKey: "0xaa3d882e938a86957904dcad27a46b044310bd672dba5741d9b61e9f542f6c6b"
 ```
 
-3. Jalankan Web3Signer
+3. Run Web3Signer.
 
 ```shell
 web3signer --key-store-path=./keyFiles/ eth1 --chain-id=1337 --downstream-http-port=8545
 ```
 
-> Note: sebelum menjalankan Web3Signer, jaringan hyperledger besu harus dijalankan terlebih dahulu.
+> **Note**: Ensure the Hyperledger Besu network is running before starting Web3Signer.
 
-4. Cek Web3Signer
+4. Check Web3Signer.
 
 ```shell
 curl -X GET http://127.0.0.1:9000/upcheck
 ```
 
-5. Cek Web3Signer passing requests to Besu
+5. Verify Web3Signer is passing requests to Besu.
 
 ```shell
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":51}' http://127.0.0.1:9000
@@ -153,147 +153,155 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id
 
 ### Utility
 
-Untuk membuat private key sebanyak n dan menyimpannya pada signing key configuration file, kode `utils.sh` dapat digunakan. Untuk menjalankan Web3Signer dengan memanfaatkan private key yang dibuat, jalankan perintah berikut.
+To generate `n` private keys and save them in signing key configuration files, the `utils.sh` script can be used. To run Web3Signer using the generated private keys, execute the following command:
 
 ```shell
 web3signer --key-store-path=./keyFiles/keys/ eth1 --chain-id=1337 --downstream-http-port=8545
 ```
 
-## Menjalankan Prometheus dan Grafana
+## Running Prometheus and Grafana
 
-- Link Instalasi [Prometheus](https://prometheus.io/docs/prometheus/latest/installation/)
-- Link Instalasi [Grafana](https://grafana.com/docs/grafana/latest/installation/)
-- Link Instalasi [Node Exporter](https://prometheus.io/docs/guides/node-exporter/)
+- Installation Link for [Prometheus](https://prometheus.io/docs/prometheus/latest/installation/)
+- Installation Link for [Grafana](https://grafana.com/docs/grafana/latest/installation/)
+- Installation Link for [Node Exporter](https://prometheus.io/docs/guides/node-exporter/)
 
-Sebelum menjalankan Prometheus, pastikan untuk menjalankan Node Exporter terlebih dahulu. Anda bisa masuk ke folder `node_exporter` dan menjalankan perintah berikut.
+Before running Prometheus, ensure Node Exporter is running first. Navigate to the `node_exporter` folder and execute the following command:
 
 ```shell
 sudo docker compose up -d
 ```
 
-Perintah di atas akan menjalankan Node Exporter pada port 9100.
+The above command will run Node Exporter on port 9100.
 ![Node Exporter](/screenshot/node-exporter.png)
 
-Ketika Prometheus sudah terinstall pastikan untuk menjalankan Prometheus dengan menggunakan konfigurasi `prometheus.yml` yang ada pada folder `prometheus`.
+Once Prometheus is installed, ensure it is running using the `prometheus.yml` configuration file located in the `prometheus` folder.
+
 ```shell
 prometheus --config.file=prometheus/prometheus.yml 
 ```
-Anda bisa mengakses Prometheus pada port 9090.
+
+You can access Prometheus on port 9090.
 ![Prometheus](/screenshot/prometheus.png)
 
-Kemudian untuk grafana, Anda langsung bisa menjalankan grafana jika mengikuti panduan instalasi yang ada pada link di atas. Setelah itu, Anda bisa mengakses Grafana pada port 3000. Namun, sebelum itu, Anda perlu mengkonfigurasi Prometheus sebagai data source pada Grafana (walaupun hal ini sebenarnya bisa dilakukan setelah Anda mengakses Grafana).
+For Grafana, follow the installation guide linked above. After installation, you can access Grafana on port 3000. Before that, configure Prometheus as a data source in Grafana (this can also be done after accessing Grafana).
+
 ```shell
 sudo cp ./grafana/provisioning/datasources/datasource.yml /etc/grafana/provisioning/datasources/
 ```
-Setelah itu, restart Grafana.
+
+Restart Grafana.
+
 ```shell
 sudo systemctl restart grafana-server
 ```
-Anda bisa mengakses Grafana pada port 3000.
+
+Access Grafana on port 3000.
 ![Grafana](/screenshot/grafana.png)
 
-Kredensial default Grafana adalah sebagai berikut.
+Default Grafana credentials:
+
 ```txt
 username: admin
 password: admin
 ```
 
-Kemudian pada halaman utama Grafana, Anda bisa menambahkan data source dengan memilih Prometheus (jika belum Anda konfigurasi sebelumnya). Isi URL dengan `http://localhost:9090` dan klik `Save & Test`.
+On the Grafana homepage, add a data source by selecting Prometheus (if not already configured). Set the URL to `http://localhost:9090` and click `Save & Test`.
 
-Untuk mengakses dashboard yang sudah disediakan, Anda bisa mengakses [Grafana Dashboard](https://grafana.com/grafana/dashboards) dan mencari dashboard yang sesuai dengan kebutuhan Anda. Dalam konteks ini, kami menyarankan:
+To access pre-configured dashboards, visit [Grafana Dashboard](https://grafana.com/grafana/dashboards) and search for dashboards that suit your needs. Recommended dashboards for this context:
+
 - [Node Exporter Full](https://grafana.com/grafana/dashboards/1860)
 - [Besu Overview](https://grafana.com/grafana/dashboards/10273-besu-overview/)
 - [Besu Full](https://grafana.com/grafana/dashboards/16455-besu-full/)
 
-Anda bisa mengimpor dashboard pada link <ip_address>:3000/dashboard/import dengan menggunakan ID dashboard ataupun dengan mengimpor file JSON yang sudah Anda download.
+Import dashboards at `<ip_address>:3000/dashboard/import` using the dashboard ID or by uploading the downloaded JSON file.
 
-### Konfigurasi Metric Query PromQL untuk Prometheus
+### PromQL Metric Query Configuration for Prometheus
 
-1. CPU Usage: persentase total user and system CPU time per detik untuk 5 menit terakhir.
+1. **CPU Usage**: Percentage of total user and system CPU time per second over the last 5 minutes.
 
   ```promql
   sum(rate(process_cpu_seconds_total{job="besu"}[5m])) by (instance) * 100
   ```
 
-2. Memory Usage: persentase memori yang digunakan relatif dengan virtual memory yang dialokasikan.
+2. **Memory Usage**: Percentage of memory used relative to allocated virtual memory.
 
   ```promql
   process_resident_memory_bytes{job="besu"} / process_virtual_memory_bytes{job="besu"} * 100
   ```
 
-3. Transaction count: jumlah transaksi yang dilakukan pada 5 menit terakhir.
+3. **Transaction Count**: Number of transactions performed in the last 5 minutes.
 
   ```promql
   sum(rate(besu_blockchain_chain_head_transaction_count{job="besu"}[5m]))
   ```
 
-4. Gas Used: Gas yang digunakan pada suatu transaksi.
+4. **Gas Used**: Gas used in a transaction.
 
   ```promql
   besu_blockchain_chain_head_gas_used
   ```
 
-### Menyiapkan Chainlens Blockchain explorer
+### Setting Up Chainlens Blockchain Explorer
 
-Chainlens menyediakan informasi menyeluruh dari jaringan privat blockchain yang dibuat, seperti informasi block, contract metadata, dan pencarian transaksi. Untuk mempermudah *information retrieval* pada proyek ini, Chainlens akan digunakan sebagai Blockchain explorer.
+Chainlens provides comprehensive information about the private blockchain network created, such as block information, contract metadata, and transaction search. To facilitate information retrieval in this project, Chainlens will be used as the Blockchain Explorer.
 
-> Note: Instal Docker dan Docker Compose terlebih dahulu
+> Note: Install Docker and Docker Compose first.
 
-Pada folder `docker-compose` pada `chainlens`, jalankan perintah berikut.
+In the `docker-compose` folder within `chainlens`, run the following command:
 
 ```shell
 NODE_ENDPOINT=http://host.docker.internal:8545 docker compose up -d
 ```
 
-Setelah selesai, buka browser dan akses `http://localhost/dashboard` untuk melihat Chainlens Blockchain explorer.
+Once completed, open a browser and access `http://localhost/dashboard` to view the Chainlens Blockchain Explorer.
 
-Stop chainlens dengan perintah berikut.
+Stop Chainlens with the following command:
 
 ```shell
 docker compose down
 ```
 
-## Menjalankan Kode Interaksi
+## Running Interaction Code
 
-Untuk menjalankan kode interkasi, kita memerlukan:
+To run the interaction code, the following are required:
 
 1. Python3
 2. pip
 3. pipenv
 
-> **Note**: Setelah kalian mengunduh pipenv, jalankan perintah `pipenv shell` untuk menjalankan virtual environment. Kemudian, jalankan perintah `pipenv install` untuk mengunduh semua dependensi yang diperlukan untuk menjalankan kode interkasi.
+> **Note**: After downloading pipenv, run the command `pipenv shell` to activate the virtual environment. Then, run the command `pipenv install` to download all dependencies required to run the interaction code.
 
-Kode interaksi terdapat pada folder `src/networks/ethash/interaction`.
+The interaction code is located in the folder `src/networks/ethash/interaction`.
 
 ### FlexCoin
 
-Untuk menjalankan kode interkasi FlexCoin, jalankan perintah berikut.
+To run the FlexCoin interaction code, execute the following command:
 
 ```shell
-python3 <path_ke_FlexCoin.py>
+python3 <path_to_FlexCoin.py>
 ```
 
-Kemudian, kita akan diminta untuk mengisi contract address dari *smart contract* FlexCoin melalui prompt terminal. Contract address dari *smart contract* FlexCoin dapat diakses pada file `FlexCoin.json` pada folder `build/contracts`. Berikut adalah contoh dari contract address *smart contract* FlexCoin.
+You will then be prompted to enter the contract address of the FlexCoin smart contract via the terminal prompt. The contract address of the FlexCoin smart contract can be found in the `FlexCoin.json` file in the `build/contracts` folder. Below is an example of the contract address for the FlexCoin smart contract:
 
 ```json
 "networks": {
-    "1337": {
-      "events": {},
-      "links": {},
-      "address": "0x42699A7612A82f1d9C36148af9C77354759b210b",
-      "transactionHash": "0xb79a975a92afb3888096d74fc42ea1e1a75cb5b3dbfa0c295466fb3de65f94fe"
-    },
-    ...
+  "1337": {
+    "events": {},
+    "links": {},
+    "address": "0x42699A7612A82f1d9C36148af9C77354759b210b",
+    "transactionHash": "0xb79a975a92afb3888096d74fc42ea1e1a75cb5b3dbfa0c295466fb3de65f94fe"
+  },
+  ...
 }
 ```
 
-Ambil `"address"` pada JSON tersebut dan masukkan ke prompt terminal ketika menjalankan kode interaksi dengan FlexCoin.
+Copy the `"address"` from the JSON and input it into the terminal prompt when running the interaction code with FlexCoin.
 
 ```txt
 What is the contract address? - FlexCoin: 0x42699A7612A82f1d9C36148af9C77354759b210b
 ```
 
-Contoh output adalah sebagai berikut.
+An example output is as follows:
 
 ```txt
 Number of houses: 0
@@ -321,7 +329,7 @@ House made for node:  9
 Transaction Hash: 0x5ab2b7866aa12477a4f321b8ba67ae6aef4c5fc42758d36a6204fdca2174014e
 ```
 
-Jika kita menjalankan kode FlexCoinExample.py, kode tersebut akan menjalankan uji coba transaksi FlexCoin dengan output sebagai berikut.
+If you run the `FlexCoinExample.py` code, it will execute a test transaction for FlexCoin with the following output:
 
 ```txt
 Number of houses: 10
@@ -353,9 +361,9 @@ House 1 - FlexCoin: ['0x23b7A96F30309eabd68d741C0FeA7802F7Bdd1b5', 199999999999]
 House 2 - FlexCoin: ['0x279842E43ce3036f1E5A9953cF6839e46c78dD05', 200000000001]
 ```
 
-### Mekanisme Trading
+### Trading Mechanisms
 
-Untuk menjalankan interaksi untuk masing-masing mekanisme perdagangan, kita cukup mengeksekusi kode yang sesuai pada folder `src/networks/ethash/interaction`.
+To run interactions for each trading mechanism, simply execute the corresponding code in the folder `src/networks/ethash/interaction`:
 
 ```shell
 python3 src/networks/ethash/interaction/Duration.py
@@ -364,7 +372,6 @@ python3 src/networks/ethash/interaction/RealTime.py
 python3 src/networks/ethash/interaction/FutureBlock.py
 ```
 
-### Simulasi LEM
+### LEM Simulation
 
-Simulasi LEM dapat dilakukan dengan menjalankan script python pada folder berikut: [`/src/networks/ethash/interaction`](/src/networks/ethash/interaction).
-
+LEM simulation can be performed by running the Python script in the following folder: [`/src/networks/ethash/interaction`](/src/networks/ethash/interaction).
